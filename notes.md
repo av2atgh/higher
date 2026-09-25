@@ -53,3 +53,31 @@
    non-bipartite; the giant component of G(n,p) acquires odd cycles at the
    same threshold as the giant component, so the "odd cluster" sector is
    never empty above p_c.
+
+## 2026-09-25 — real random structures for odd Borromean fermion clusters
+
+Constraint: two-spin equal-mass fermions (2+1) have no Borromean trimer in
+free space; Efimov needs mass ratio > 13.6, Kartavtsev–Malykh trimers > 8.2.
+Electron cases need three flavours, heavy-light imbalance, or graph
+structure.
+
+1. **Warm dilute nuclear matter** (supernova matter, neutron-star crust
+   pasta, heavy-ion fireballs). Mott densities rise with binding: deuteron
+   (2.2 MeV) dissolves before t / 3He (~8 MeV) (Röpke; Typel, Röpke, Klähn,
+   Blaschke, Wolter, PRC 81, 015803, 2010). Between the two Mott densities the
+   three-nucleon clusters are Borromean in the medium. Established.
+2. **Amorphous semiconductors / chalcogenide glasses** as continuous random
+   networks (Zachariasen–Polk; Weaire–Thorpe tight binding on a random
+   4-regular graph). Attraction = Anderson negative-U centres (pairs, no ESR).
+   Odd cluster = third carrier on a pair, ESR-active. Borromean regime on
+   RRG(4) = the Mattis–Rudin computation in README next steps. Open.
+3. **Disordered attractive Fermi systems** (dirty superconductors near
+   BCS–BEC crossover, Fermi gases in speckle). Randomness supplies the
+   two-body resonance tuning locally and effective mass contrast; Borromean
+   trimers as Griffiths rare-region objects, Lifshitz tail below the two-body
+   continuum. Own extrapolation; needs three flavours or mass imbalance to be
+   clean.
+
+Excluded: 3D Anderson-transition wavefunctions (effective d_s < 2, outside
+the Efimov window); trions in disordered TMDs (odd cluster, not Borromean,
+exciton always binds).
