@@ -89,3 +89,28 @@ for U > U_3 and the colour superfluid needs a finite density to compete.
 The Borromean window (7 to 16 %) is the natural place to look for a
 disorder-driven transition: site disorder that pushes local coupling
 across U_3 but not U_2 creates trions and no pairs.
+
+## One deep site (dilute disorder), 2026-09-25
+
+Code tree4.py (orbits under the root stabiliser, impurity eps0 at the root,
+validated to 1e-5 against Cayley-tree ED at m=2,3), bs.py (Birman–Schwinger
+threshold at the continuum edge, U_c = 1/lambda_max of V^{1/2}(H0-E)^{-1}V^{1/2};
+reproduces bisection to its 2e-3 grid), scan_bs.py, logs scan_bs_K{K}_L{L}.log.
+
+One particle binds to the site for |eps0| > eps_c = (K-1)t/sqrt(K) (exact,
+cavity resolvent at the edge). For 0 < |eps0| < eps_c (L=40 trimer, 80 pair):
+
+| |eps0|/eps_c | K=2 U_2 | K=2 U_3 | ratio | K=3 U_2 | K=3 U_3 | ratio |
+|---|---|---|---|---|---|---|
+| 0    | 1.985 | 1.391 | 0.70 | 3.264 | 2.172 | 0.67 |
+| 0.3  | 1.954 | 1.285 | 0.66 | 3.197 | 1.961 | 0.61 |
+| 0.5  | 1.790 | 1.118 | 0.62 | 2.840 | 1.665 | 0.59 |
+| 0.8  | 1.261 | 0.759 | 0.60 | 1.908 | 1.099 | 0.58 |
+| 0.9  | 0.979 | 0.598 | 0.61 | 1.453 | 0.849 | 0.58 |
+| 0.99 | 0.596 | 0.415 | 0.70 | 0.819 | 0.545 | 0.67 |
+
+U_3 < U_2 at every depth; the window is 30-42 %, three to four times the
+uniform-sector window. eps0 -> 0 gives the square-summable thresholds of the
+clean tree (L=60: K=2 1.974/1.379, K=3 3.257/2.165; still drifting down by
+~0.01 from L=40), above the uniform-sector values 1.414/1.310 and
+2.309/2.073, as the Perron-vs-band-bottom argument predicts.

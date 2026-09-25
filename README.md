@@ -41,9 +41,17 @@ even multiple; 6e is the realized "triple".
   threshold is U_2 = 2t(K-1)/sqrt(K) exactly and the three-flavour trimer
   binds at U_3 < U_2 for every K >= 2 (U_3/U_2 from 0.93 at K=2 to 0.84 at
   K=10). Borromean window exists; 2+1 equal-mass fermions have no trimer.
-* Next: three-colour cavity on the tree with site disorder (notes.md);
-  first the dilute limit with disorder, does the Borromean window survive
-  and does W move U_3 and U_2 differently.
+* DONE 2026-09-25 (trimer/results.md, one deep site): a site too shallow
+  to bind one particle (|eps0| < eps_c = (K-1)t/sqrt(K)) binds three before
+  two at every depth, U_3/U_2 = 0.58-0.70 (K=2,3). Window three to four
+  times wider than in the uniform sector. Birman-Schwinger thresholds
+  (trimer/bs.py). L=60 runs may still be finishing (scan_bs_K*_L60.log).
+* paper/main.tex: PRL draft "Borromean trimers on the Bethe lattice",
+  complete with two figures; four pages including references, needs
+  trimming to the PRL limit; bib entries' pages/volumes to be checked.
+* Next: impurity scan at K = 4, 6, 10; finite disorder W on a random
+  regular graph (fraction of sites in the Borromean window as a function
+  of W and U); three-colour cavity at finite density (notes.md).
 * Efimov window on networks: build graphs with spectral dimension in
   (2.3, 3.8) (hierarchical / diamond lattices) and look for the log-periodic
   trimer tower.

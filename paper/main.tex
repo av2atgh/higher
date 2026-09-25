@@ -28,10 +28,10 @@ pair binds at $\Up=2t(K-1)/\sqrt{K}$ exactly, with $K$ the branching and
 $t$ the hopping. The trimer binds at $\Ut<\Up$ for every $K\ge2$, with the
 Borromean window $(\Up-\Ut)/\Up$ growing from $7\%$ at $K=2$ to $16\%$ at
 $K=10$. Two identical fermions and a third particle of the same mass have no
-trimer, so the effect requires three flavours. A single site with energy
-$\eps_0$ that is too shallow to hold one particle holds three before it
-holds two, \TODO{numbers from the impurity scan}, which places Borromean
-trions in the Lifshitz tail of any disordered network. For three-flavour
+trimer, so the effect requires three flavours. A single site too shallow to hold one particle holds three before it
+holds two, at an attraction between $0.58$ and $0.70$ of the pair threshold
+for every depth of the site, which places Borromean trions in the Lifshitz
+tail of any disordered network. For three-flavour
 attractive fermions on random graphs, the trion Fermi liquid therefore
 reaches zero density and the colour superfluid needs a finite density to
 compete.
@@ -207,19 +207,36 @@ $\eps_{0}-E-(K+1)t^{2}\mathcal{G}(E)=0$ with $\mathcal{G}$ the cavity
 resolvent of the clean tree at the band edge, and the reduced model
 reproduces this threshold and the impurity energy.
 
-For $-\eps_{c}<\eps_{0}<0$ the site is too shallow to hold one particle.
-\TODO{Fill from scan\_imp: $\Up(\eps_{0})$ and $\Ut(\eps_{0})$ for $K=2,3$;
-state whether $\Ut<\Up$ at every $\eps_{0}$, the values at $\eps_{0}\to0$,
-which are the square-summable thresholds of the clean tree, and the
-approach to zero at $\eps_{0}\to-\eps_{c}$. Figure~\ref{fig:imp}.}
-A site whose energy lies in the Lifshitz tail of a disordered network
-therefore holds a trion at an attraction where it holds neither one particle
-nor a pair.
+For $-\eps_{c}<\eps_{0}<0$ the site is too shallow to hold one particle,
+and Fig.~\ref{fig:imp} shows the attraction it needs to hold two or three.
+Both thresholds fall from their $\eps_{0}=0$ values to zero at
+$\eps_{0}=-\eps_{c}$, and the trimer threshold is the lower one at every
+depth: $\Ut/\Up$ runs from $0.70$ at $\eps_{0}=0$ through a minimum of
+$0.60$ near $0.8\,\eps_{c}$ and back to $0.70$ at $0.99\,\eps_{c}$ for
+$K=2$, and from $0.67$ through $0.58$ to $0.67$ for $K=3$. The Borromean
+window at a shallow site is three to four times wider than on the uniform
+tree. The $\eps_{0}\to0$ limit is the square-summable sector of the clean
+tree, and its thresholds, $\Up=1.97\,t$ and $\Ut=1.38\,t$ at $K=2$,
+$3.26\,t$ and $2.17\,t$ at $K=3$ (truncation $L=60$, still drifting down
+by $0.01\,t$ from $L=40$), lie above those of Table~\ref{tab:thr}. The
+reason is the one anticipated: a composite localised around a point pays
+the band bottom of the tree for its centre of mass, the uniform sector pays
+the lower Perron energy. The ordering is the same in both sectors and the
+window is wider in the localised one. A site whose energy lies in the
+Lifshitz tail of a disordered network therefore holds a trion at an
+attraction where it holds neither one particle nor a pair.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{fig2.pdf}
-\caption{\TODO{Pair and trimer thresholds against the impurity energy
-$\eps_{0}$ for $K=2$ and $K=3$, in units of $\eps_{c}$ and $t$.}}
+\caption{Pair threshold $\Up$ (light line) and trimer threshold $\Ut$
+(dark line) at a single site of energy $\eps_{0}$ on the Bethe lattice,
+for $K=2$ and $K=3$, against the depth of the site in units of
+$\eps_{c}=(K-1)t/\sqrt{K}$, the depth at which one particle binds.
+Birman--Schwinger at the continuum edge, orbits truncated at $L=40$ for
+the trimer and $80$ for the pair. Shaded: three particles bound, no two
+bound. Open circles at $\eps_{0}=0$: the uniform-sector thresholds of
+Table~\ref{tab:thr}, which are lower because the centre of mass of a
+composite is then in the Perron mode of the tree.}
 \label{fig:imp}
 \end{figure}
 
@@ -248,7 +265,7 @@ condensate of pairs occupies on a random graph and what the thermodynamic
 limit of a random regular graph gives once its rare short loops are
 ignored, and both thresholds in Table~\ref{tab:thr} are taken in the same
 sector. The impurity problem has no such subtlety, and the ordering
-$\Ut<\Up$ \TODO{survives / does not survive} there. Second, the effect is a
+$\Ut<\Up$ holds there with a wider margin. Second, the effect is a
 lattice effect in the sense of Mattis~\cite{mattis1986}, a consequence of
 the band edge rather than of a resonance, and there is no Efimov tower:
 the return probability on a tree decays exponentially, so its effective
