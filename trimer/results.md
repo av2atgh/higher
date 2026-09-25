@@ -62,7 +62,7 @@ cubic lattice (Mattis and Rudin, PRL 1984).
 
 Antisymmetric under exchange of the two identical particles, attraction only
 between unlike particles. No trimer: E_3 stays above the dimer + particle
-continuum for all U up to 14 (K = 2) and 6 (K = 3), with the gap shrinking
+continuum for all U up to 14 (K = 2 and K = 3), with the gap shrinking
 slowly (scan2.log). Consistent with free space, where equal-mass 2+1 needs
 a mass ratio above 8.2 (Kartavtsev and Malykh) for a trimer. So the
 Borromean effect on the tree requires three flavours, as stated in notes.md.
