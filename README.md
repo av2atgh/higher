@@ -37,10 +37,13 @@ even multiple; 6e is the realized "triple".
 
 ## Next steps
 
-* Borromean threshold on a random regular graph: does a three-particle bound
-  state appear at an attraction U_3 < U_2 (dimer threshold) as on the cubic
-  lattice (Mattis–Rudin)? Two-body problem is exact by cavity on the tree;
-  three-body by exact diagonalization on RRG(N, z) with N ~ 200.
+* DONE 2026-09-25 (trimer/results.md): on the tree of branching K the pair
+  threshold is U_2 = 2t(K-1)/sqrt(K) exactly and the three-flavour trimer
+  binds at U_3 < U_2 for every K >= 2 (U_3/U_2 from 0.93 at K=2 to 0.84 at
+  K=10). Borromean window exists; 2+1 equal-mass fermions have no trimer.
+* Next: three-colour cavity on the tree with site disorder (notes.md);
+  first the dilute limit with disorder, does the Borromean window survive
+  and does W move U_3 and U_2 differently.
 * Efimov window on networks: build graphs with spectral dimension in
   (2.3, 3.8) (hierarchical / diamond lattices) and look for the log-periodic
   trimer tower.
