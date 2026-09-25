@@ -81,3 +81,35 @@ structure.
 Excluded: 3D Anderson-transition wavefunctions (effective d_s < 2, outside
 the Efimov window); trions in disordered TMDs (odd cluster, not Borromean,
 exciton always binds).
+
+## 2026-09-25 — where a tree-like mean field pays off
+
+Pick: three-flavour attractive Hubbard on RRG(z) (z = 4 for the continuous
+random network) with site disorder. Nuclear matter has no graph (Beth–
+Uhlenbeck territory). Two-flavour case has no trion phase.
+
+Already done on the Bethe lattice (do not redo):
+* pair sector, clean: DMFT, Keller–Metzner–Schollwöck PRL 2001; Garg,
+  Krishnamurthy, Randeria PRL 2005; Toschi, Capone, Castellani PRB 2005.
+* pair sector, disordered: cavity, Ioffe & Mézard PRL 2010 (SIT, glassy pair
+  phase); Feigel'man, Ioffe, Kravtsov, Cuevas Ann. Phys. 2010 (fractal SC).
+* three flavours, clean: DMFT, Inaba & Suga PRA 2009, PRL 2010 (colour SF vs
+  trions). Cubic-lattice reference: Rapp, Zaránd, Honerkamp, Hofstetter PRL
+  2007 (first-order SF → trion).
+
+Open, and reachable by a three-colour cavity on the tree:
+1. colour-SF Tc vs disorder W (three pairing channels in Ioffe–Mézard);
+2. SF → trion Fermi-liquid line vs W; expectation: trions localize first, so
+   disorder favours the trion side;
+3. trion glass at strong W;
+4. zero-density anchor: trimer vs pair binding threshold on the tree
+   (Mattis–Rudin on RRG); if U_3 < U_2 the trion phase extends to zero
+   density.
+
+Cheap first pass: strong-coupling limit → hard-core dimer (t²/U) + trimer
+(t³/U²) mixture on a random graph, Bethe–Peierls in the chygraph style;
+gives trion-crystal / phase-separation lines at commensurate filling.
+
+Realizations: cold atoms with speckle (clean SU(3)); amorphous chalcogenides
+only approximately (three lone-pair p orbitals split by the random
+environment).
