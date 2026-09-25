@@ -1,0 +1,10 @@
+check K=2 m=2 U=2.0 eps0=-1.0: Cayley depth 4 ED -6.139885  reduced -6.150366
+check K=2 m=2 U=2.0 eps0=-1.0: Cayley depth 5 ED -6.147060  reduced -6.150366
+check K=2 m=3 U=2.0 eps0=-1.0: Cayley depth 4 ED -10.909700  reduced -10.909929
+check K=2 m=3 U=2.0 eps0=-1.0: Cayley depth 5 ED -10.909904  reduced -10.909929
+check K=2 m=3 U=3.0 eps0=-0.5: Cayley depth 4 ED -11.976745  reduced -11.976774
+check K=2 m=3 U=3.0 eps0=-0.5: Cayley depth 5 ED -11.976772  reduced -11.976774
+check K=2 m=1 eps0=-1.0607: closed form -2.865439  reduced -2.865439
+check K=3 m=1 eps0=-1.7321: closed form -3.559452  reduced -3.559452
+
+=== K=2: eps_c=0.7071, invariant-sector U2=1.4142
