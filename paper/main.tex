@@ -21,27 +21,29 @@
 \date{\today}
 
 \begin{abstract}
-Three particles can be bound when no two of them are, the Borromean
-binding of Efimov physics and halo nuclei. I show that this happens on the
-Bethe lattice, the infinite tree that random regular graphs resemble
-locally, for three distinguishable particles with on-site attraction $U$
-and hopping $t$. On a tree a composite has two natural thresholds, one for
-a square-summable state and one for a state whose centre of mass is
-uniform, and I compute both. The square-summable pair threshold is a sum
-over the tree's edge spherical function, $\Up=1.966\,t$ at branching $K=2$,
-and the trimer binds at $\Ut=0.70\,\Up$; the window widens with $K$, to
-$\Ut=0.59\,\Up$ at $K=10$. In the uniform sector the pair threshold
-is $2t(K-1)/\sqrt{K}$ exactly and the trimer again binds first. On finite
-random regular graphs the bound trimer appears where no pair is bound. At finite
-density a Fermi liquid of trimers is the ground state below a density that
-vanishes at the trimer threshold, and the colour superfluid enters above
-it. Two
-identical fermions and a third particle of equal mass have no trimer,
-because their exchange with the pair is repulsive, so the effect needs
-three flavours. A single site too shallow to hold one particle holds three
-at $0.6$ of the attraction at which it holds two, and on a disordered
-tree the three-body ground state is a localised trimer over a range of
-attraction where the two-body ground state is not a pair.
+Three particles can be bound when no two of them are. On a lattice this
+Borromean binding of three distinguishable particles with on-site
+attraction $U$ and hopping $t$ is known from Mattis and Rudin; I revisit
+it on the Bethe lattice, the infinite tree that random regular graphs
+resemble locally, and find that the tree adds one thing a lattice cannot
+have. On a non-amenable graph a composite has two binding thresholds,
+one for a square-summable state and one for a state whose centre of mass
+is the uniform Perron mode, which the spectral gap places below the band;
+and quantum statistics selects which one a many-body phase sees, since a
+bosonic composite condenses into the Perron mode and binds at the uniform
+threshold while a fermionic composite fills a band and binds at the
+square-summable one. I compute both thresholds for the pair, in closed
+form, and for the trimer, numerically, for branching $K=2$ to $10$. The
+trimer binds before the pair in all three comparisons, square-summable
+against square-summable, uniform against uniform, and the cross-sector
+one that governs the dilute three-flavour gas, a fermionic trimer against
+a condensed pair, whose window is $3\%$ of the pair threshold at $K=2$
+and $13\%$ at $K=10$. A Fermi liquid of trimers is then the ground state
+below a density that vanishes at the trimer threshold. The ordering is
+verified on finite random regular graphs; the fermionic no-go of Mattis
+follows from an exchange argument that holds on any graph; and a site too
+shallow to hold one particle holds three at $0.6$ of the attraction at
+which it holds two.
 \end{abstract}
 
 \maketitle
@@ -83,14 +85,41 @@ flavours~\cite{inaba2009,inaba2010}. Yet the few-body anchor of these
 phase diagrams, whether the trion or the pair forms first as the
 attraction grows at zero density, is not known on a tree, and a tree
 raises a question a lattice does not: its uniform mode is not
-square-summable, so a composite has two thresholds, not one. Here I
-compute both for the pair and the trimer, obtain the pair thresholds in
-closed form, verify the ordering on finite random regular graphs, compare
-a Fermi liquid of trimers with the colour superfluid at finite density, and
-repeat the calculation for a single deep site and a disordered tree. New
-relative to the cubic lattice~\cite{mattis1984} are the exact pair
-thresholds, the monotonic growth of the window with the degree, the two
-sectors, which have no lattice counterpart, and the disorder results.
+square-summable, so a composite has two thresholds, not one.
+
+It helps to say at the outset what in this paper is a new instance of
+known physics, what is new as a result of calculation, and what is new
+physics. Known, and recovered here on a new graph, are four things: that
+a band edge alone produces Borromean binding of three distinguishable
+particles, the result of Mattis and Rudin on the cubic
+lattice~\cite{mattis1984}; that two identical fermions and a third
+particle do not bind, Mattis's no-go~\cite{mattis1986}, which the
+exchange argument of Sec.~\ref{sec:fermions} shows to hold on any graph;
+that a lattice has no Efimov tower, which was Mattis's point and which
+the count of Sec.~\ref{sec:conclusions} confirms; and that the
+three-flavour gas has a trionic phase at strong
+coupling~\cite{rapp2007,inaba2010}, here extended to zero density with a
+point-trimer estimate. New as results of calculation, and useful for the
+random-graph and dynamical-mean-field literature, are the closed-form
+pair thresholds in both sectors, Eqs.~\eqref{eq:U2}
+and~\eqref{eq:U2L2}, their exact large-$K$ limits from the semicircle
+density, the monotonic growth of the Borromean window with the degree,
+the thresholds at a single deep site and on a disordered tree, and the
+direct verification of the ordering on random regular graphs conditioned
+on girth. New physics, in the sense of a statement with no lattice
+counterpart, is one thing: on a non-amenable graph a composite has two
+thresholds, separated by the spectral gap that the Alon--Boppana bound
+makes unavoidable~\cite{alon1986,nilli1991}, and quantum statistics
+selects which one a many-body phase sees. A bosonic composite condenses
+into the Perron mode and binds at the uniform threshold; a fermionic
+composite fills a band and binds at the square-summable one.
+Section~\ref{sec:density} is the evidence: the chemical potential of the
+colour superfluid tends to the uniform-sector pair energy, while the
+trimer liquid starts from the square-summable bottom. The window that
+governs the dilute phase diagram is therefore the cross-sector one, a
+fermionic trimer against a condensed pair, and the ordering holds in all
+three comparisons, which is a stronger statement than any one of the
+numbers in Table~\ref{tab:thr}.
 
 \section{Model and the two thresholds}
 \label{sec:model}
@@ -128,11 +157,17 @@ ordinary normalisable state, its centre of mass at the band bottom
 $-2\sqrt{K}\,t_{\rm eff}$ of its own effective hopping. In the
 \emph{uniform} sector the relative motion is normalisable but the centre of
 mass is the Perron mode, at $-(K+1)t_{\rm eff}$, lower. The uniform
-threshold is therefore the lower of the two, and both are physical: the
-square-summable one is what a bulk state on a random regular graph sees,
-the uniform one is what a condensate of composites, which occupies the
-Perron mode, sees. Every number below says which sector it belongs to. I
-set $t=1$.
+threshold is therefore the lower of the two. The gap between the Perron
+energy $-(K+1)t$ and the band edge $-2\sqrt{K}\,t$ is the spectral gap of
+a regular non-amenable graph, which the Alon--Boppana bound makes
+unavoidable on any family of $(K+1)$-regular graphs~\cite{alon1986,nilli1991}; on a
+lattice the uniform mode is the $P=0$ Bloch state, inside the band, and
+the two thresholds coincide. Both are physical, and Sec.~\ref{sec:density}
+shows which one a many-body phase sees: a condensate of bosonic
+composites occupies the Perron mode and binds at the uniform threshold,
+a Fermi liquid of composites fills a band and binds at the
+square-summable one. Every number below says which sector it belongs to.
+I set $t=1$.
 
 
 \begin{figure}[t]
@@ -201,6 +236,7 @@ Eq.~\eqref{eq:U2}, and the large-$U$ expansion
 $E_{3}=-3U-3(K+1)t^{2}/(2U)+O(t^{4}/U^{3})$.
 
 \section{Square-summable sector}
+\label{sec:l2}
 Fix a root vertex and take the
 wavefunctions invariant under the automorphisms that fix it, which relabel
 the children of every vertex independently. A configuration is reduced to
@@ -243,32 +279,54 @@ reproduces the bisection thresholds of the uniform sector to their grid.
 ($\Up$ from Eq.~\eqref{eq:U2L2}, $\Ut$ extrapolated in $L$,
 uncertainty in the last digit) and in the uniform sector ($\Up^{\rm u}$
 from Eq.~\eqref{eq:U2}, $\Ut^{\rm u}$ by bisection on a grid of
-$2\times10^{-3}$).}
+$2\times10^{-3}$). The last column is the cross-sector ratio of a
+square-summable trimer to a uniform pair, the one that governs the
+dilute three-flavour gas, Sec.~\ref{sec:density}.}
 \label{tab:thr}
 \begin{ruledtabular}
-\begin{tabular}{rrrrrrrr}
-$K$ & $z$ & $\Up$ & $\Ut$ & $\Ut/\Up$ & $\Up^{\rm u}$ & $\Ut^{\rm u}$ & $\Ut^{\rm u}/\Up^{\rm u}$ \\
+\begin{tabular}{rrrrrrrrr}
+$K$ & $z$ & $\Up$ & $\Ut$ & $\Ut/\Up$ & $\Up^{\rm u}$ & $\Ut^{\rm u}$ & $\Ut^{\rm u}/\Up^{\rm u}$ & $\Ut/\Up^{\rm u}$ \\
 \hline
- 2 &  3 & 1.966 & 1.369 & 0.696 & 1.414 & 1.310 & 0.926 \\
- 3 &  4 & 3.251 & 2.159 & 0.664 & 2.309 & 2.073 & 0.898 \\
- 4 &  5 & 4.269 & 2.741 & 0.642 & 3.000 & 2.637 & 0.879 \\
- 5 &  6 & 5.136 & 3.218 & 0.627 & 3.578 & 3.103 & 0.867 \\
- 6 &  7 & 5.904 & 3.633 & 0.615 & 4.083 & 3.508 & 0.859 \\
-10 & 11 & 8.402 & 4.949 & 0.589 & 5.692 & 4.800 & 0.843 \\
+ 2 &  3 & 1.966 & 1.369 & 0.696 & 1.414 & 1.310 & 0.926 & 0.968 \\
+ 3 &  4 & 3.251 & 2.159 & 0.664 & 2.309 & 2.073 & 0.898 & 0.935 \\
+ 4 &  5 & 4.269 & 2.741 & 0.642 & 3.000 & 2.637 & 0.879 & 0.914 \\
+ 5 &  6 & 5.136 & 3.218 & 0.627 & 3.578 & 3.103 & 0.867 & 0.899 \\
+ 6 &  7 & 5.904 & 3.633 & 0.615 & 4.083 & 3.508 & 0.859 & 0.890 \\
+10 & 11 & 8.402 & 4.949 & 0.589 & 5.692 & 4.800 & 0.843 & 0.869 \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
 
-Table~\ref{tab:thr} and Fig.~\ref{fig:bind} contain the main result. In
-both sectors and on every tree with $K\ge2$ the trimer binds before the
-pair, and the Borromean window widens with the branching: in the
-square-summable sector from $30\%$ of $\Up$ at $K=2$ to $41\%$ at
-$K=10$, in the uniform sector from $7\%$ to $16\%$. Above $\Up$ the
-trimer stays below the continuum of a bound pair and a free particle,
-$E_{2}(U)-2\sqrt{K}\,t$ in the uniform sector, where the pair carries the
-Perron centre of mass and the third particle, normalisable relative to it,
-enters at the band edge; so the trimer is the ground composite for all
-$U>\Ut$. On the cubic lattice the same Birman--Schwinger calculation in a
+Table~\ref{tab:thr} and Fig.~\ref{fig:bind} contain the main result. On
+every tree with $K\ge2$ the trimer binds before the pair in all three
+comparisons: square-summable trimer against square-summable pair, with a
+window that widens from $30\%$ of $\Up$ at $K=2$ to $41\%$ at $K=10$;
+uniform against uniform, from $7\%$ to $16\%$; and, the comparison that
+Sec.~\ref{sec:density} shows to govern the dilute three-flavour gas, a
+square-summable trimer against a uniform pair, from $3\%$ to $13\%$. The
+first two are the tree's versions of the cubic-lattice result; the third
+has no lattice counterpart, and it is the smallest, because the
+condensed pair takes the Perron energy while the fermionic trimer does
+not. Above $\Up$ the trimer stays below the continuum of a bound pair and
+a free particle, $E_{2}(U)-2\sqrt{K}\,t$ in the uniform sector, where the
+pair carries the Perron centre of mass and the third particle,
+normalisable relative to it, enters at the band edge; so the trimer is
+the ground composite for all $U>\Ut$. The large-$K$ limit is the
+infinite-coordination limit of dynamical mean-field
+theory~\cite{keller2001,garg2005}, with $t^{*}=\sqrt{K}\,t$ fixed and a
+semicircular density of states. There the uniform pair threshold is
+$\Up^{\rm u}\to2t^{*}$ from Eq.~\eqref{eq:U2}, and the square-summable one
+keeps only the $d=0$ term of Eq.~\eqref{eq:U2L2}, since $b_{d}P_{d}$
+vanishes as $K^{-d/2}$, so $1/\Up\to b_{0}$ with $b_{0}$ the double
+integral of the semicircle at the two-body edge, $\Up\to3.308\,t^{*}$ and
+$\Up/\Up^{\rm u}\to1.654$. The trimer ratios of Table~\ref{tab:thr} are
+still falling at $K=10$; fits of the form $a+b/\sqrt{K}$ extrapolate them
+to about $0.50$ in the square-summable sector, $0.78$ in the uniform one
+and $0.79$ across sectors, but the same fit applied to the pair ratio,
+whose limit is known, gives $1.54$ for $1.654$, so these are indications
+that the infinite-coordination three-flavour gas keeps a finite Borromean
+window, not values; the three-body problem on the semicircle is the
+calculation that would fix them. On the cubic lattice the same Birman--Schwinger calculation in a
 box of relative coordinates gives $\Up=7.914\,t$, the Watson integral, and $\Ut=5.158\,t$
 (converged to the last digit at box radius $6$), a window of $35\%$, the
 number behind the result of Mattis and Rudin~\cite{mattis1984}. The tree
@@ -318,8 +376,9 @@ square-summable thresholds describe.
 
 \section{Finite density}
 \label{sec:density}
-The two sectors acquire their meaning at finite density. A condensate of
-bosonic composites occupies the Perron mode: the BCS mean field of two
+The two sectors acquire their meaning at finite density, and this section
+is the evidence for the claim of the introduction that statistics selects
+the sector. A condensate of bosonic composites occupies the Perron mode: the BCS mean field of two
 colours with attraction $U$ on the Kesten--McKay density of states, solved
 for the gap and the chemical potential $\mu$ at density $n$ per colour, has
 $2\mu\to E_{2}^{\rm u}$, the uniform-sector pair energy, as $n\to0$ (to
@@ -368,8 +427,12 @@ takes only the excess, below $3\%$ of the particles at $n=0.1$ and below
 $5\%$ at $n=0.3$ for every $U>\Ut$ in the range. The trionic phase of the strong-coupling lattice
 gas~\cite{rapp2007,inaba2010} therefore extends to zero density for all
 $U>\Ut$, the colour superfluid enters from finite density, and the
-ordering of the thresholds is the zero-density boundary of that phase
-diagram. The estimate leaves out the interaction between trimers, the
+zero-density boundary of that phase diagram is the cross-sector
+comparison of Table~\ref{tab:thr}: between $\Ut$ and $\Up^{\rm u}$ the
+trimer liquid faces no bound pair at all, and above $\Up^{\rm u}$ it
+faces a condensed pair whose energy is the uniform-sector one. That is
+the window a trion liquid enjoys on a tree, a few per cent at $K=2$ and
+$13\%$ at $K=10$, and it is the statement the lattice cannot make. The estimate leaves out the interaction between trimers, the
 pairing of the free colour with a trimer's constituents, and the
 fluctuations of the mean field; a three-colour cavity calculation at
 finite density would fix $n_{1}(U)$ beyond it.
@@ -387,6 +450,7 @@ Dotted lines mark $\Ut$, $\Up^{\rm u}$ and $\Up$ from Table~\ref{tab:thr}.}
 \end{figure}
 
 \section{Two identical fermions}
+\label{sec:fermions}
 The result depends on the three
 particles being distinguishable. In the sector antisymmetric under the
 exchange of particles 1 and 2, with attraction only between unlike
@@ -400,7 +464,11 @@ makes the amplitude $+t$, opposite to a hop, and Pauli blocking removes
 the site $i$. The relative motion at leading order is the tree with one
 vertex removed plus a positive potential $t$ on its neighbours, whose
 spectrum lies above $-2\sqrt{K}\,t$, and the pair itself moves only at
-order $t^{2}/U$: no bound state. The same exchange with the bosonic sign
+order $t^{2}/U$: no bound state. Nothing in this uses the tree. By Cauchy
+interlacing the spectrum of any vertex-deleted subgraph lies inside the
+band of the graph, and a positive potential raises it, so the argument
+recovers Mattis's no-go~\cite{mattis1986} on any graph; the tree adds
+nothing to it and the section is a check, not a result. The same exchange with the bosonic sign
 $-t$ is what binds trimers in the one-dimensional Bose--Hubbard
 model~\cite{valiente2010}, and on the three-dimensional lattice the
 equal-mass $2+1$ problem has no discrete spectrum below the continuum at
@@ -458,45 +526,55 @@ a statement about localised few-body states, not about the many-body
 phases; those need the finite-density calculation.
 
 \section{Conclusions}
-On the Bethe lattice three distinguishable particles bind before two, in
-both of the tree's sectors and in a window that widens with the degree; a
-Fermi liquid of trimers is the ground state at low density; and a shallow
-site holds three before it holds two.
+\label{sec:conclusions}
+On the Bethe lattice three distinguishable particles bind before two.
+That they do is the band-edge mechanism of Mattis and
+Rudin~\cite{mattis1984} on a new graph, and the fermionic no-go and the
+absence of an Efimov tower are Mattis's~\cite{mattis1986} as well. What
+the tree adds is that a composite on a non-amenable graph has two
+thresholds, and that statistics chooses between them: pairs condense
+into the Perron mode and bind at the uniform threshold, trimers fill a
+band and bind at the square-summable one. The ordering holds in both
+sectors and across them, and the cross-sector window, a few per cent at
+$K=2$ growing to $13\%$ at $K=10$, is the one a Fermi liquid of trimers
+enjoys at low density against a colour superfluid. The exact pair
+thresholds, their large-$K$ limits, the growth of the window with the
+degree, the deep-site and disorder thresholds and the finite-graph
+verification are the calculational content; a shallow site holds three
+before it holds two.
 
-The model is realised, with its three flavours, by
-$^{6}$Li, whose three lowest hyperfine states have attractions tuned
-together by a magnetic field, load into optical lattices, and show their
-three-body physics in recombination
-losses~\cite{ottenstein2008,huckans2009,williams2009}; a speckle or
-quasi-periodic potential adds the site
-disorder~\cite{billy2008,roati2008}. There the results say that as the
-attraction is ramped up at low filling the first composites are trimers on
-the deepest sites, at close to $0.6$ of the attraction at which those sites
-bind a pair, so that three-body loss, or a trimer line in radio-frequency
-spectroscopy, precedes pairing, and that at low filling the trimers form a Fermi liquid
-before the colour superfluid sets in, Sec.~\ref{sec:density}; the
-three-colour cavity calculation at finite density, beyond the mean field
-of that section, is the next step. For electrons the
-$2+1$ result is a selection rule: negative-$U$ centres in amorphous
+The model is realised, with its three flavours, by $^{6}$Li, whose three
+lowest hyperfine states have attractions tuned together by a magnetic
+field, load into optical lattices, and show their three-body physics in
+recombination losses~\cite{ottenstein2008,huckans2009,williams2009}. An
+optical lattice is cubic, so what such an experiment tests is the
+cubic-lattice window of Mattis and Rudin, $35\%$ by the calculation of
+Sec.~\ref{sec:l2}, and not the tree; the tree's specific content, the two
+sectors, needs a non-amenable graph. The natural home for that is a
+hyperbolic lattice in circuit quantum
+electrodynamics~\cite{kollar2019,boettcher2020}, where the separation of
+the uniform mode from the bulk band is already the observable and where
+the composites, being photonic, are bosonic and see the uniform
+thresholds. For electrons the $2+1$ result is a selection rule:
+negative-$U$ centres in amorphous
 semiconductors~\cite{anderson1975,weaire1971}, which bind spin-paired
 electrons, cannot by themselves produce Borromean three-electron centres;
 a third flavour, orbital or valley, or a mass imbalance is needed.
 
-For networks the trimer is a dynamically generated higher-order interaction, a
-bound triple with no bound pair from a pairwise Hamiltonian, a hyperedge
-without its faces~\cite{vazquez2023pre,battiston2020}, of the kind that
-pairwise inference cannot see.
+For networks the trimer is a dynamically generated higher-order
+interaction, a bound triple with no bound pair from a pairwise
+Hamiltonian, a hyperedge without its faces~\cite{vazquez2023pre,battiston2020},
+of the kind that pairwise inference cannot see.
 
-Last, the effect is a lattice effect in the
-sense of Mattis~\cite{mattis1986}, a consequence of the band edge rather
-than of a resonance. Counting the states below the three-body edge in the
-uniform sector at $U=\Up^{\rm u}$, where the pair is at resonance, gives
-one for $K=2$ and $3$, unchanged from $L=60$ to $180$, with the next state
-approaching the edge as $L^{-2}$, a continuum state; so no Efimov tower
-was found. The square-summable sector cannot be used for this count, since
-the centre-of-mass band of the bound trimer fills the region below the
-edge, and the square-root edge of the Kesten--McKay density leaves the
-question open in principle.
+Last, the Efimov question. The effect is a lattice effect in the sense of
+Mattis~\cite{mattis1986}, a consequence of the band edge rather than of a
+resonance, and a tower is not expected on a lattice. The count confirms
+it: the states below the three-body edge in the uniform sector at
+$U=\Up^{\rm u}$, where the pair is at resonance, number one for $K=2$ and
+$3$, unchanged from $L=60$ to $180$, with the next state approaching the
+edge as $L^{-2}$, a continuum state. The square-summable sector cannot be
+used for this count, since the centre-of-mass band of the bound trimer
+fills the region below the edge.
 
 \begin{acknowledgments}
 All code that produced the numbers in this paper is available at

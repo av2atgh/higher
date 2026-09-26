@@ -184,3 +184,17 @@ K=2: n1 = 0.003 (U=1.38), 0.015 (1.40), 0.030 (1.42), 0.052 (1.45), 0.090 (1.50)
 0.030 (2.20), 0.085 (2.25), 0.144 (2.30), 0.207 (2.35), 0.271 (2.40); crosses 0.1
 at 2.26. Above n1 the superfluid fraction stays < 3% at n = 0.1 and < 5% at 0.3
 (trimer band narrow: t3 = 0.17 / 0.14 near threshold). Paper Sec. "Finite density", fig3.
+
+Colleague's review (2026-09-26) applied: manuscript reframed around the one new
+physics point (two thresholds on a non-amenable graph, Alon-Boppana gap; statistics
+selects the sector: bosonic composites condense in the Perron mode -> uniform
+threshold, fermionic fill a band -> L2 threshold). Cross-sector ratio U3(L2)/U2^u
+= 0.968, 0.935, 0.914, 0.899, 0.890, 0.869 (K = 2..10), window 3-13 %: the one a
+trion liquid enjoys. Large-K pair limits (semicircle_limit.py): U2^u -> 2 t*,
+U2 -> 3.3075 t* (1/b0, b0 = 0.302347), ratio 1.654; a + b/sqrt K fits of the
+trimer ratios -> 0.50 (L2), 0.78 (u), 0.79 (cross), indicative only (same fit on
+the pair gives 1.54 for 1.654). Known-physics recapitulated: Mattis-Rudin
+mechanism, Mattis 2+1 no-go (exchange argument lattice-independent by Cauchy
+interlacing), no Efimov tower, trionic phase (Rapp). 6Li in optical lattices
+tests the cubic window, not the tree; hyperbolic circuit-QED lattices named as
+the home of the two-sector physics.
