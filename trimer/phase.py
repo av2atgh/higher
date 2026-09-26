@@ -1,7 +1,7 @@
 """Dilute-limit competition on the Bethe lattice at density n per colour:
  trion liquid: free fermions of mass set by t_3(U), band e_3 + [-2 sqrt K t_3, 2 sqrt K t_3],
    t_3 = (E3_L2 - E3_u)/(K+1-2 sqrt K), e_3 = E3_u + (K+1) t_3 (E3_L2 extrapolated 1/L^2)
- colour superfluid: BCS of two colours (bcs.solve) + free third colour (bcs.free)
+ colour superfluid: BCS of two colours (bcs.solve, Hartree term removed) + free third colour (bcs.free)
  mixed: E(n) = min_x [E_tri(x n) + E_SF((1-x) n)]"""
 import numpy as np, json, sys
 from bcs import solve, free, dos
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     for i in range(len(U)):
         print(f"  {U[i]:.2f}: {e3[i]:.4f} {e3u[i]:.4f} t3={t3[i]:.4f} e3={e3[i]-edge*t3[i]:.4f} | {e2[i]:.4f} {e2u[i]:.4f} t2={t2[i]:.4f} | {e3[i] < min(3*edge, e2u[i] + edge) - 1e-6}")
     out = []
-    ns = np.logspace(-4, np.log10(0.3), 40)
+    ns = np.logspace(-4, np.log10(0.3), 60)
     xs = np.linspace(0, 1, 101)
     print("phase boundary: n1 (superfluid enters, x<1), n2 (trions gone, x=0)")
     for i in range(len(U)):
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             if np_ <= 1e-9: return 0.0
             key = round(np_, 9)
             if key not in Esf_cache:
-                mu, D, E = solve(K, U[i], np_, e, w); Esf_cache[key] = E + free(K, np_, e, w)[0]
+                mu, D, E = solve(K, U[i], np_, e, w); Esf_cache[key] = E + U[i] * np_ ** 2 + free(K, np_, e, w)[0]  # +U n_p^2 removes bcs.py's Hartree term: -3U n^2 is common to all phases
             return Esf_cache[key]
         xstar = []
         for n in ns:

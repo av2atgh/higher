@@ -16,7 +16,8 @@
 \title{Borromean trimers on the Bethe lattice}
 
 \author{Alexei Vazquez}
-\affiliation{Nodes \& Links Ltd, Cambridge, United Kingdom}
+\email{alexei@nodeslinks.com}
+\affiliation{Nodes \& Links Ltd, Salisbury House, Station Road, Cambridge, CB1 2LA, UK}
 \date{\today}
 
 \begin{abstract}
@@ -31,7 +32,10 @@ over the tree's edge spherical function, $\Up=1.966\,t$ at branching $K=2$,
 and the trimer binds at $\Ut=0.70\,\Up$; the window widens with $K$, to
 $\Ut=0.59\,\Up$ at $K=10$. In the uniform sector the pair threshold
 is $2t(K-1)/\sqrt{K}$ exactly and the trimer again binds first. On finite
-random regular graphs the bound trimer appears where no pair is bound. Two
+random regular graphs the bound trimer appears where no pair is bound. At finite
+density a Fermi liquid of trimers is the ground state below a density that
+vanishes at the trimer threshold, and the colour superfluid enters above
+it. Two
 identical fermions and a third particle of equal mass have no trimer,
 because their exchange with the pair is repulsive, so the effect needs
 three flavours. A single site too shallow to hold one particle holds three
@@ -76,7 +80,8 @@ attraction grows at zero density, is not known on a tree, and a tree
 raises a question a lattice does not: its uniform mode is not
 square-summable, so a composite has two thresholds, not one. Here I
 compute both for the pair and the trimer, obtain the pair thresholds in
-closed form, verify the ordering on finite random regular graphs, and
+closed form, verify the ordering on finite random regular graphs, compare
+a Fermi liquid of trimers with the colour superfluid at finite density, and
 repeat the calculation for a single deep site and a disordered tree. New
 relative to the cubic lattice~\cite{mattis1984} are the exact pair
 thresholds, the monotonic growth of the window with the degree, the two
@@ -267,6 +272,76 @@ thresholds, both probabilities fall with $N$. The trimer is bound and the
 pair is not, on actual random regular graphs, in the sector the
 square-summable thresholds describe.
 
+\section{Finite density}
+\label{sec:density}
+The two sectors acquire their meaning at finite density. A condensate of
+bosonic composites occupies the Perron mode: the BCS mean field of two
+colours with attraction $U$ on the Kesten--McKay density of states, solved
+for the gap and the chemical potential $\mu$ at density $n$ per colour, has
+$2\mu\to E_{2}^{\rm u}$, the uniform-sector pair energy, as $n\to0$ (to
+five digits at $n=10^{-4}$), not the square-summable one. A Fermi liquid
+of composites instead fills a band from its square-summable bottom, the
+Perron mode being a single state. With three colours the composites are
+pairs, which condense, and trimers, which are fermions, so the
+zero-density ordering of Table~\ref{tab:thr} asks whether a Fermi liquid
+of trimers or a colour superfluid, two colours paired and the third free,
+has the lower energy at small $n$, the question that the many-body
+literature settles at strong coupling and half
+filling~\cite{rapp2007,inaba2010}.
+
+I compare the two at the level of their composites' energies. The trimer is
+a point fermion with hopping $t_{3}$ on the tree, defined from the two
+sectors' energies at the same $U$ by
+$E_{3}-E_{3}^{\rm u}=(K+1-2\sqrt{K})\,t_{3}$, with $E_{3}$ the
+square-summable energy extrapolated in $L^{-2}$ from $L=30$ and $45$ and
+$E_{3}^{\rm u}$ the uniform one at $L=60$; its band is Kesten--McKay with
+bottom $E_{3}$ and its energy per site at density $n$ is that band filled
+to $n$. The superfluid is the mean-field energy of the two paired colours
+at density $n$ plus a free third colour at $n$. The Hartree energy
+$-3Un^{2}$ is common to every uniform phase and is dropped from both. A
+mixed phase with a fraction $x$ of the particles in trimers is allowed, and
+the ground state is the minimum over $x$. The description holds while the
+trimers are dilute on the scale of their size, a few lattice spacings
+near threshold, and I use it for $n$ up to $0.1$ per colour.
+
+At zero density the trimer liquid wins for every $U>\Ut$. Between $\Ut$
+and $\Up^{\rm u}$ no pair is bound in either sector and the superfluid
+reduces to free fermions; above $\Up^{\rm u}$ the trimer lies below a
+condensed pair and a free particle, $E_{3}<E_{2}^{\rm u}-2\sqrt{K}\,t$, by
+a margin that grows with $U$. The superfluid enters at a density
+$n_{1}(U)$ that vanishes at $\Ut$ and rises steeply, Fig.~\ref{fig:phase}:
+for $K=2$, $n_{1}=0.003$ at $U=1.38\,t$, $0.015$ at $1.40\,t$, $0.05$
+at $1.45\,t$ and $0.09$ at $1.50\,t$, and it crosses $0.1$ at
+$U=1.51\,t$; for $K=3$, $n_{1}=0.004$ at $U=2.17\,t$, $0.03$ at $2.20\,t$
+and $0.08$ at $2.25\,t$, crossing $0.1$ at $2.26\,t$. The onset is where
+the trimer Fermi level reaches the binding energy,
+$E_{3}+t_{3}\lambda_{F}(n_{1})=\min(-6\sqrt{K}\,t,\;E_{2}^{\rm u}-2\sqrt{K}\,t)$,
+with $\lambda_{F}(n)$ the Fermi level of the Kesten--McKay band at filling
+$n$. Above $n_{1}$ the superfluid is a minority component: the trimer band
+is narrow, $t_{3}\approx0.17\,t$ at $K=2$ and $0.14\,t$ at $K=3$ near
+threshold, so the trimer Fermi level rises slowly and the paired component
+takes only the excess, below $3\%$ of the particles at $n=0.1$ and below
+$5\%$ at $n=0.3$ for every $U>\Ut$ in the range. The trionic phase of the strong-coupling lattice
+gas~\cite{rapp2007,inaba2010} therefore extends to zero density for all
+$U>\Ut$, the colour superfluid enters from finite density, and the
+ordering of the thresholds is the zero-density boundary of that phase
+diagram. The estimate leaves out the interaction between trimers, the
+pairing of the free colour with a trimer's constituents, and the
+fluctuations of the mean field; a three-colour cavity calculation at
+finite density would fix $n_{1}(U)$ beyond it.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig3.pdf}
+\caption{Density $n_{1}$ per colour at which the colour superfluid enters,
+against the attraction $U$, for $K=2$ and $3$. Below the line (shaded) a
+Fermi liquid of trimers is the ground state; above it the colour
+superfluid is a minority component, below $5\%$ of the particles up to
+$n=0.3$. The line starts at $\Ut$ and crosses $n=0.1$, the limit of the
+composite description, at $U=1.51\,t$ ($K=2$) and $2.26\,t$ ($K=3$).
+Dotted lines mark $\Ut$, $\Up^{\rm u}$ and $\Up$ from Table~\ref{tab:thr}.}
+\label{fig:phase}
+\end{figure}
+
 \section{Two identical fermions}
 The result depends on the three
 particles being distinguishable. In the sector antisymmetric under the
@@ -338,7 +413,12 @@ around a site, which shifts its thresholds in either direction, and it is
 a statement about localised few-body states, not about the many-body
 phases; those need the finite-density calculation.
 
-\section{Discussion}
+\section{Conclusions}
+On the Bethe lattice three distinguishable particles bind before two, in
+both of the tree's sectors and in a window that widens with the degree; a
+Fermi liquid of trimers is the ground state at low density; and a shallow
+site holds three before it holds two.
+
 The model is realised, with its three flavours, by
 $^{6}$Li, whose three lowest hyperfine states have attractions tuned
 together by a magnetic field, load into optical lattices, and show their
@@ -349,12 +429,10 @@ disorder~\cite{billy2008,roati2008}. There the results say that as the
 attraction is ramped up at low filling the first composites are trimers on
 the deepest sites, at close to $0.6$ of the attraction at which those sites
 bind a pair, so that three-body loss, or a trimer line in radio-frequency
-spectroscopy, precedes pairing. I expect, but have not shown, that the
-trionic phase found at strong coupling in the clean
-system~\cite{rapp2007,inaba2010} extends to zero density for $U>\Ut$,
-with the colour superfluid entering from finite density; the three-colour
-cavity calculation at finite density is the next step, and the thresholds
-here are its zero-density boundary. For electrons the
+spectroscopy, precedes pairing, and that at low filling the trimers form a Fermi liquid
+before the colour superfluid sets in, Sec.~\ref{sec:density}; the
+three-colour cavity calculation at finite density, beyond the mean field
+of that section, is the next step. For electrons the
 $2+1$ result is a selection rule: negative-$U$ centres in amorphous
 semiconductors~\cite{anderson1975,weaire1971}, which bind spin-paired
 electrons, cannot by themselves produce Borromean three-electron centres;
@@ -373,13 +451,14 @@ the centre-of-mass band of the bound trimer fills the region below the
 edge, and the square-root edge of the Kesten--McKay density leaves the
 question open in principle.
 
-\section{Conclusions}
-On the Bethe lattice three distinguishable particles bind
-before two, in both of the tree's sectors and in a window that widens with
-the degree, and a shallow site holds three before it holds two.
-
-The code that produced every number in this letter is deposited
-at~\cite{code}.
+\begin{acknowledgments}
+All code that produced the numbers in this paper is available at
+Ref.~\cite{code}. The calculations were assisted by Claude, an AI
+assistant developed by Anthropic. Nodes \& Links Ltd provided support in
+the form of salary for Alexei Vazquez but did not have any additional role
+in the conceptualization of the study, the analysis, the decision to
+publish or the preparation of the manuscript.
+\end{acknowledgments}
 
 \bibliography{refs}
 

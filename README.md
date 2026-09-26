@@ -46,9 +46,11 @@ even multiple; 6e is the realized "triple".
   two at every depth, U_3/U_2 = 0.58-0.70 (K=2,3). Window three to four
   times wider than in the uniform sector. Birman-Schwinger thresholds
   (trimer/bs.py). L=60 runs may still be finishing (scan_bs_K*_L60.log).
-* paper/main.tex: PRL draft "Borromean trimers on the Bethe lattice",
-  complete with two figures; four pages including references, needs
-  trimming to the PRL limit; bib entries' pages/volumes to be checked.
+* paper/main.tex: after a PRL-style referee report (~/Downloads/prl_review.md)
+  the manuscript was revised (all six major points) and retargeted to
+  Physical Review E; response in ~/Downloads/prl_response.md. 2026-09-26:
+  new section "Finite density" (trimer Fermi liquid vs colour superfluid,
+  trimer/phase.py, fig3).
 * Next: impurity scan at K = 4, 6, 10; finite disorder W on a random
   regular graph (fraction of sites in the Borromean window as a function
   of W and U); three-colour cavity at finite density (notes.md).

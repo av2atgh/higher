@@ -8,3 +8,5 @@ N=200 seed=1597 U=2.30: edge1=-2.7842  E2Q-2edge1=-0.1578  E3Q-3edge1=-1.0942  E
 N=200 seed=1873 U=0.00: edge1=-2.7913  E2Q-2edge1=+0.0000  E3Q-3edge1=+0.0000  E3Q-E2Q-edge1=+0.0000  P2=0.0135  P3tri=0.0003  P3pair=0.0397  (392s)
 N=200 seed=1873 U=1.00: edge1=-2.7913  E2Q-2edge1=-0.0216  E3Q-3edge1=-0.0686  E3Q-E2Q-edge1=-0.0470  P2=0.0344  P3tri=0.0044  P3pair=0.1060  (374s)
 N=200 seed=1873 U=1.40: edge1=-2.7913  E2Q-2edge1=-0.0394  E3Q-3edge1=-0.1418  E3Q-E2Q-edge1=-0.1025  P2=0.0570  P3tri=0.0283  P3pair=0.2063  (299s)
+N=200 seed=1873 U=1.70: edge1=-2.7913  E2Q-2edge1=-0.0608  E3Q-3edge1=-0.2975  E3Q-E2Q-edge1=-0.2367  P2=0.0888  P3tri=0.1388  P3pair=0.3929  (592s)
+N=200 seed=1873 U=2.00: edge1=-2.7913  E2Q-2edge1=-0.0948  E3Q-3edge1=-0.6167  E3Q-E2Q-edge1=-0.5219  P2=0.1417  P3tri=0.2859  P3pair=0.4490  (636s)

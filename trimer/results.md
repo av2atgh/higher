@@ -170,3 +170,17 @@ W = 2 eps_c: U = 0.5 U2 -> Borromean 0.14/0.17 (K=2/3), pair 0.05/0.07;
 U = 0.7 U2 -> 0.37/0.35 and 0.13/0.15. W = 4 eps_c: 0.25 hold one particle,
 Borromean 0.07/0.09 at U = 0.5 U2. Finite disordered Cayley ED (disorder_ed.py)
 abandoned: coincidence probabilities measure the IPR of the lowest orbital.
+
+Finite density (bcs.py, l2_energies.py, phase.py; 2026-09-26): BCS mean field of
+two colours on the KM DOS has 2 mu -> E_2^u as n -> 0 (the condensate is the
+Perron mode); a Fermi liquid of trimers fills the L2 band with hopping
+t_3 = (E3_L2 - E3_u)/(K+1-2 sqrt K). Hartree -3U n^2 common, dropped. Mixed
+phase allowed. Trimer liquid wins at n -> 0 for all U > U_3 (L2); superfluid
+enters at n_1(U), see phase_K{2,3}.json and paper fig3. Runs at 1.4 GB peak
+each; never run two in parallel with an RRG N=200 job (16 GB machine).
+Onset of the superfluid (phase_onset_K{2,3}.json; trimer Fermi level = binding):
+K=2: n1 = 0.003 (U=1.38), 0.015 (1.40), 0.030 (1.42), 0.052 (1.45), 0.090 (1.50),
+0.128 (1.55), 0.167 (1.60), 0.245 (1.70); crosses 0.1 at 1.51. K=3: 0.004 (2.17),
+0.030 (2.20), 0.085 (2.25), 0.144 (2.30), 0.207 (2.35), 0.271 (2.40); crosses 0.1
+at 2.26. Above n1 the superfluid fraction stays < 3% at n = 0.1 and < 5% at 0.3
+(trimer band narrow: t3 = 0.17 / 0.14 near threshold). Paper Sec. "Finite density", fig3.
