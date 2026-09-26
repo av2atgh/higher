@@ -55,6 +55,10 @@ even multiple; 6e is the realized "triple".
   emergent hyperedge; the Bethe-lattice trimer as the worked case; two
   thresholds on expanders with statistics selecting the sector). Earlier
   versions: paper/main_v1.tex (PRL), main_v2.tex (PRE, physics framing).
+* emergent/: percolation of the emergent hyperedges (exact cavity for the
+  correlated layer, MC check) and localisation of the composites (book's
+  statmech package tables + direct runs); paper Sec. "The emergent
+  hyperedges connect and localise", fig4.
 * Next: impurity scan at K = 4, 6, 10; finite disorder W on a random
   regular graph (fraction of sites in the Borromean window as a function
   of W and U); three-colour cavity at finite density (notes.md).

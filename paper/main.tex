@@ -44,9 +44,11 @@ $K=10$. The test is passed on finite random regular graphs; two identical
 fermions and a third particle never form the object, a selection rule
 for emergence; and on a heterogeneous graph the hyperedges nucleate on
 rare deep sites, at $0.6$ of the attraction those sites need to bind a
-pair. Hyperedges inferred from data can therefore be products of
-pairwise dynamics on the underlying graph, invisible to pairwise
-inference by construction.
+pair, form a connected network as soon as they exist at a finite
+fraction of the sites, and localise at a disorder an order of magnitude
+below the one that localises single particles. A group interaction on a network can therefore be a product of
+pairwise dynamics on the underlying graph, carried by a statistic of the
+group that no statistic of its parts contains.
 \end{abstract}
 
 \maketitle
@@ -61,11 +63,10 @@ In all of this the hyperedge is an input: measured, as a co-authorship
 or a protein complex, or postulated. The converse question is asked less
 often. Given a graph whose edges carry only pairwise couplings, can the
 dynamics on it produce an object that is irreducibly three-body, a group
-that exists although no pair within it does? If it can, then a hyperedge
-found in data need not be a datum of the system: it may be what
-pairwise dynamics on the underlying graph makes, and a pairwise
-inference on the same data would miss it by construction, in the way
-that pairwise correlations miss the parity of three bits that are
+that exists although no pair within it does? If it can, then a group interaction need not be a datum of the
+system: it may be what pairwise dynamics on the underlying graph makes,
+carried by a property of the group that none of its parts has, in the
+way that the parity of three bits can be fixed while the bits are
 pairwise independent~\cite{williams2010,rosas2019}.
 
 Physics has a name for the sharpest version of such an object. Three
@@ -102,8 +103,9 @@ trimer thresholds on the Bethe lattice in both sectors, the pair ones in
 closed form. Section~\ref{sec:rrg} runs the test on finite random
 regular graphs. Section~\ref{sec:density} shows that quantum statistics
 selects which threshold a many-body phase sees, Sec.~\ref{sec:fermions}
-that statistics can also forbid the object, and Secs.~\ref{sec:site}
-and~\ref{sec:disorder} where it nucleates on a heterogeneous graph.
+that statistics can also forbid the object, Secs.~\ref{sec:site}
+and~\ref{sec:disorder} where it nucleates on a heterogeneous graph, and
+Sec.~\ref{sec:perc} whether the emergent hyperedges connect and move.
 
 It helps to say at the outset what here is a new instance of known
 physics, what is new as a result of calculation, and what is new. Known,
@@ -121,12 +123,12 @@ calculation are the closed-form pair thresholds in both sectors,
 Eqs.~\eqref{eq:U2} and~\eqref{eq:U2L2}, their exact large-$K$ limits from
 the semicircle density, the monotonic growth of the Borromean window with
 the degree, the thresholds at a single deep site and on a disordered
-tree, and the direct verification on random regular graphs conditioned on
-girth. New are two things. For network science, the definition of an
-emergent hyperedge with a test that a three-point statistic passes and
-every two-point statistic fails, and the demonstration that the sparse
-random graphs of the field produce one from the simplest pairwise
-dynamics. For physics, that on an expander a composite has two
+tree, the direct verification on random regular graphs conditioned on
+girth, an exact cavity for the percolation of the emergent hyperedges,
+and the localisation of the trimer liquid. New are two things. For network science, the definition of an
+emergent hyperedge with a test in terms of a three-point statistic, and
+the demonstration that the sparse random graphs of the field produce one
+from the simplest pairwise dynamics. For physics, that on an expander a composite has two
 thresholds, separated by the spectral gap that the Alon--Boppana bound
 makes unavoidable~\cite{alon1986,nilli1991}, and that quantum statistics
 selects which one a many-body phase sees: a bosonic composite condenses
@@ -162,9 +164,8 @@ particles and as $1/N$ for a bound $(k-1)$-cluster and a free particle. An emerg
 $k$-fold coincidence that survives the thermodynamic limit while every
 $(k-1)$-fold one dies. This is the analogue, for a ground state, of the
 information-theoretic notion of an irreducible dependence, a synergy that
-no subset of the variables carries~\cite{williams2010,rosas2019}, and it
-says in one line why pairwise inference cannot see the object: the
-statistic that detects it is a $k$-point function, and all the
+no subset of the variables carries~\cite{williams2010,rosas2019}: the
+statistic that detects the object is a $k$-point function, and all the
 $(k-1)$-point functions of the state are those of free particles.
 
 The rest of the paper is the case $k=3$ on the sparse random graphs of
@@ -427,7 +428,7 @@ pair is not, on actual random regular graphs, in the sector the
 square-summable thresholds describe. This is an emergent hyperedge in
 the sense of Sec.~\ref{sec:def}: a three-point coincidence that survives
 the thermodynamic limit, produced by couplings that live on the edges of
-the graph, while every two-point coincidence decays as that of free
+the graph, while the two-point coincidences decay as those of free
 particles.
 
 \section{Which composites a many-body phase forms}
@@ -586,6 +587,87 @@ lesson is where to look: emergent hyperedges nucleate on the rare deep
 sites of a heterogeneous graph, and on a finite random graph, on its
 short cycles, before they exist in the bulk.
 
+\section{The emergent hyperedges connect and localise}
+\label{sec:perc}
+Two questions a network scientist asks of the emergent hyperedges of a
+disordered graph are whether they connect and whether they move.
+
+The first is a percolation problem of a new kind. A fraction $f_{B}$ of
+the sites is Borromean, Sec.~\ref{sec:disorder}, and each hosts a trimer
+whose one-body density decays away from it; take as its support the ball
+that holds $90\%$ of that density, of radius $r_{90}$ computed from the
+root-fixed eigenvector, which runs from $2$ for a deep site well inside
+its window to $8$ or more for a shallow site or a barely bound trimer.
+Two hyperedges are connected when their supports overlap or touch, and
+the question is whether the connected hyperedges form an infinite
+network. This is a correlated site percolation, since a site is active
+when it lies within the radius of any centre, and on the tree it is
+exact by a cavity whose message carries the distance from a site to the
+nearest centre inside its subtree and the probability that the site is
+connected to infinity, conditioned on the distance to the nearest centre
+outside; the correlations run along the tree, which is why the message
+closes. With every centre of radius $r$ the thresholds are $p_{c}=0.073$,
+$0.014$ and $0.003$ at $r=1$, $2$ and $3$ for $K=2$, and $0.024$,
+$0.0022$ and $0.0002$ for $K=3$, against $1/K$ at $r=0$, and the cavity
+agrees with Monte Carlo on random regular graphs of $10^{5}$ vertices at
+every point tested, Fig.~\ref{fig:perc}(a). The Borromean fractions of
+Sec.~\ref{sec:disorder}, $0.02$ to $0.5$, lie above these thresholds by
+one to three orders of magnitude, and with the radii distributed as the
+isolated-site classification gives them, the fraction of Borromean sites
+in the infinite network is $1$ to three decimals at every $(U,W)$ at
+which the fraction is finite, for both $K$, and stays so when only the
+compact trimers, $r_{90}\le3$, are admitted. There is no
+isolated-hyperedge regime: the emergent hyperedges of a disordered tree
+form a connected network as soon as they exist at a finite fraction of
+the sites. The caveat is the isolated-site approximation itself, which
+treats a trimer of radius $8$ as bound to one site in a clean
+environment; the compact-only variant is the safe statement, and it
+gives the same answer.
+
+The second question is Anderson localisation of a composite. A trimer
+with hopping $t_{3}$ and one-body density $\rho$ sees a site-energy shift
+$\sum_{k}\rho_{k}\eps_{k}$ of variance $s_{3}^{2}W^{2}/12$, with
+$s_{3}^{2}=\sum_{d}\rho(d)^{2}/n_{d}$ between $1.4$ near threshold and
+$3$ for a trimer on one site, so its Anderson problem is the
+single-particle one on the same tree with hopping $t_{3}$ and disorder
+$s_{3}W$, exactly by scaling; and the single-particle problem is solved
+by the cavity for the resolvent~\cite{abouchacra1973}, which I use
+through its population dynamics for the mobility edge and the critical
+disorder, with the integrated density of states from random regular
+graphs of $3000$ vertices. The disorder above which every trimer state
+is localised is $W_{c}^{(3)}=W_{c}\,t_{3}/s_{3}$: at $K=2$ it is $2.1\,t$
+near the trimer threshold, falling to $1.6\,t$ at $U=2t$, against
+$17.4\,t$ for a single particle and $4\,t$ for a pair once it is well
+bound; at $K=3$ it is $2.6\,t$ against $32\,t$ and $6\,t$,
+Fig.~\ref{fig:perc}(b). Below $W_{c}^{(3)}$ the localised trimer states
+are those of the Lifshitz tail below the mobility edge, a fraction
+$n_{\rm tail}$ of the trimer band that is below $0.5\%$ at $W=0.5\,t$
+and between $2\%$ and $7\%$ at $W=t$ for $K=2$ and $U\le2t$. A Fermi
+liquid of trimers at density $n$ is fully localised, a trimer glass,
+when $n<n_{\rm tail}$; since the liquid exists only below $n_{1}(U)$,
+Sec.~\ref{sec:density}, it is a glass at every density for $W$ above the
+line $W_{\rm glass}(U)$ at which $n_{\rm tail}=n_{1}$, which at $K=2$
+rises from $0.6\,t$ at $U=1.38\,t$ to $1.4\,t$ at $U=1.5\,t$ and
+$1.7\,t$ at $U=1.7\,t$, and at $K=3$ from $1.1\,t$ to $2.1\,t$. Disorder
+therefore favours the trimer side of the phase diagram twice: it
+nucleates the emergent hyperedges on its deep sites, and it localises
+the liquid they form at a disorder an order of magnitude below the one
+that localises single particles, with the pair in between.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig4.pdf}
+\caption{(a) Percolation threshold $p_{c}$ of the emergent hyperedges
+against the radius $r$ of their supports, for Borromean centres placed
+independently on the Bethe lattice with $K=2$ and $3$: the exact cavity
+for the correlated site percolation of Sec.~\ref{sec:perc}, checked
+against Monte Carlo on random regular graphs. Shaded: the range of
+Borromean fractions found in Sec.~\ref{sec:disorder}. (b) Critical
+disorder $W_{c}$ above which every state of a composite is localised,
+against $U$, for $K=2$ (dark) and $3$ (light): trimer (full lines), pair
+above its uniform threshold (dashed), single particle (dotted).}
+\label{fig:perc}
+\end{figure}
+
 \section{Conclusions}
 \label{sec:conclusions}
 A pairwise Hamiltonian on a sparse random graph produces a bound triple
@@ -604,22 +686,20 @@ their large-$K$ limits, the growth of the window with the degree, the
 deep-site and disorder thresholds and the finite-graph verification are
 the calculational content.
 
-For network science the consequences are three. First, a hyperedge
-inferred from data is not by itself evidence of a group interaction in
-the system's rules: before a hypergraph is fitted, the null hypothesis
-that pairwise dynamics on the graph produces the group should be
-considered, and Sec.~\ref{sec:def} says what would falsify it, a
-$k$-fold coincidence that does not survive when the $(k-1)$-fold ones
-do. Second, the object is invisible to pairwise inference by
-construction, so a correlation network or a graphical model fitted to
-pairwise statistics of such a state will report free particles; the
-detection statistic is the $k$-point coincidence, the ground-state
-counterpart of an interaction information. Third, heterogeneity favours
-emergence: a site too shallow to hold one particle holds three at $0.6$
+For network science the consequences are two. First, a group
+interaction on a network need not be part of the system's rules: it can
+be made by pairwise dynamics on the underlying graph, and
+Sec.~\ref{sec:def} says what such an object is, a $k$-fold coincidence
+that survives the thermodynamic limit when the $(k-1)$-fold ones do
+not, the ground-state counterpart of an interaction information. Second,
+heterogeneity favours emergence: a site too shallow to hold one particle holds three at $0.6$
 of the attraction at which it holds two, and on a finite random graph
 the short cycles play that role, so the first emergent hyperedges of a
 network sit on its rare regions, and a survey that averages over the
-graph will not find them. Whether the same holds for classical pairwise
+graph will not find them; once they exist at a finite fraction of the
+sites they form a connected network, with no isolated regime in between,
+and the liquid they form is localised by a disorder an order of
+magnitude below the one that localises single particles. Whether the same holds for classical pairwise
 dynamics, where the candidates are a three-body activation that
 percolates when no pairwise process does and the parity dependences of
 Boolean dynamics, is the question this paper leaves open; the definition

@@ -1,0 +1,19 @@
+/Users/avazquez/anaconda3/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:86: RuntimeWarning: overflow encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+/Users/avazquez/av2atg/higher/emergent/perc_cavity.py:44: RuntimeWarning: invalid value encountered in scalar multiply
+  acc[u][d_c] += w * wc * (1 - prob_none)
+/Users/avazquez/av2atg/higher/emergent/perc_cavity.py:48: RuntimeWarning: invalid value encountered in subtract
+  delta = np.abs(Qn - Q).max() + np.abs(Pn - P).max()
+/Users/avazquez/av2atg/higher/emergent/perc_cavity.py:61: RuntimeWarning: invalid value encountered in scalar multiply
+  S += w * (1 - np.prod([1 - Q[1][d] for d in ds]))
+K=2 r=0: p_c = 0.50005  (site percolation 1/K = 0.50000)
+K=2 r=1: p_c = 0.34332
+K=2 r=2: p_c = 0.15683
+K=2 r=3: p_c = 0.05710
+K=3 r=0: p_c = 0.33187  (site percolation 1/K = 0.33333)
+K=3 r=1: p_c = 0.22323
+K=3 r=2: p_c = 0.05649
+K=3 r=3: p_c = 0.02012
+K=2 r=1: S(p): 0.050->0.0000 0.100->nan 0.150->0.0000 0.200->nan 0.300->0.0000 0.400->1.0000
+K=3 r=1: S(p): 0.050->0.0000 0.100->nan 0.150->0.0000 0.200->nan 0.300->1.0000 0.400->1.0000
+K=2 r=2: S(p): 0.050->0.0000 0.100->nan 0.150->0.0000 0.200->1.0000 0.300->1.0000 0.400->1.0000

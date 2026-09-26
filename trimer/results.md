@@ -206,3 +206,18 @@ as N grows, P_{k-1} -> 0; free: N^{1-k}; bound (k-1)-cluster + free: 1/N). The
 RRG girth-6 section is the test. Nine network-science/information references
 added from memory (battiston2021, bick2023, bianconi2021, lambiotte2019,
 iacopini2019, neuhauser2020, sun2023, rosas2019, williams2010): verify.
+
+Emergent hyperedges: percolation and localisation (emergent/, 2026-09-26).
+* perc_cavity.py: exact cavity for correlated site percolation on the tree (site active if
+  within r of a Borromean centre; message = distance to nearest centre in the subtree +
+  connection probability conditioned on the outside distance). p_c(r): K=2: 0.499 (r=0),
+  0.0729, 0.0137, 0.0030; K=3: 0.333, 0.0239, 0.0022, 0.00023. MC on RRG N=1e5 agrees
+  (perc_mc.py). Heterogeneous radii version checked against single-radius.
+* trimer_density.py: r90 of site-bound trimers 2..10 (site_density_K*.json); s3, s2
+  (uniform_density.json). perc_map.py: S = 1.000 wherever f_B > 0, also compact-only.
+* trimer_localization.py + tail_fraction.py + mobility_ext.py + glass_line.py (statmech
+  package: anderson_wc/lines tables, Ensemble.mobility_edge at W' = 14,16 (3,0) and
+  16..28 (4,0); regular_instance ED for the tail fraction): W_c^(3) = 2.1 -> 0.55 t (K=2,
+  U = 1.38 -> 4), 2.6 -> 0.65 t (K=3); W_c^(2) ~ 4 t (K=2), 6 t (K=3) once bound;
+  W_glass(U): K=2 0.6 (1.38) -> 1.4 (1.5) -> 1.7 (1.7); K=3 1.1 -> 2.1.
+  Direct mobility-edge check at W'=2.79 agrees with the table interpolation to 2%.
