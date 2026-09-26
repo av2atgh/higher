@@ -221,3 +221,13 @@ Emergent hyperedges: percolation and localisation (emergent/, 2026-09-26).
   U = 1.38 -> 4), 2.6 -> 0.65 t (K=3); W_c^(2) ~ 4 t (K=2), 6 t (K=3) once bound;
   W_glass(U): K=2 0.6 (1.38) -> 1.4 (1.5) -> 1.7 (1.7); K=3 1.1 -> 2.1.
   Direct mobility-edge check at W'=2.79 agrees with the table interpolation to 2%.
+
+Review round 2 (2026-09-26): t3 checks: strong coupling 3t^3/(2U^2); trimer band width in the
+root-fixed sector (emergent/trimer_bandwidth.py; band = box ladder before the gap, the isolated
+L-independent state above it is an internal excitation): t3 = 0.089/0.149/0.201 (K=2, U=4/3/2.5)
+vs sector 0.087/0.135/0.166; K=3: 0.058/0.089/0.114 (U=5/4/3.5) vs 0.057/0.083/0.102. Composite-
+impurity route (composite_impurity.py) abandoned: box artefact. Localisation quoted for compact
+trimers only (U >= 1.7 K=2, >= 2.5 K=3), 20% uncertainty near the low end. Extra points U = 1.8,
+1.9 (K=2), 2.6 (K=3). Single-particle glass line at equal density (glass_line_single.json):
+15-16 t (K=2), 29-31 t (K=3). Alon-Boppana -> Friedman keeps the gap open, AB says the tree
+saturates it. Percolation section cut to a paragraph in Sec. X.
