@@ -1,4 +1,4 @@
-\documentclass[aps,prl,twocolumn,superscriptaddress,floatfix]{revtex4-2}
+\documentclass[aps,pre,twocolumn,superscriptaddress,floatfix]{revtex4-2}
 
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -42,7 +42,8 @@ attraction where the two-body ground state is not a pair.
 
 \maketitle
 
-\textit{Introduction.---}Two particles are the unit of the theory of
+\section{Introduction}
+Two particles are the unit of the theory of
 superconductivity. Three particles are the unit of Efimov physics: with a
 resonant two-body interaction, three particles have a tower of bound states
 even when no pair is bound~\cite{efimov1970,nielsen2001}, which has been
@@ -81,7 +82,8 @@ relative to the cubic lattice~\cite{mattis1984} are the exact pair
 thresholds, the monotonic growth of the window with the degree, the two
 sectors, which have no lattice counterpart, and the disorder results.
 
-\textit{Model and the two thresholds.---}Consider the Bethe lattice of
+\section{Model and the two thresholds}
+Consider the Bethe lattice of
 degree $z=K+1$, the infinite tree in which every vertex has $K+1$
 neighbours, with $K$ the branching. Distinguishable particles
 $p=1,\dots,m$ hop between neighbouring vertices with amplitude $-t$ and
@@ -116,7 +118,8 @@ the uniform one is what a condensate of composites, which occupies the
 Perron mode, sees. Every number below says which sector it belongs to. I
 set $t=1$.
 
-\textit{Uniform sector.---}The tree has a transitive automorphism group,
+\section{Uniform sector}
+The tree has a transitive automorphism group,
 and the uniform sector is the set of wavefunctions constant on its orbits,
 the analogue of zero total momentum. For two particles the orbit is their
 distance $d$, with $n_{d}=(K+1)K^{d-1}$ configurations per particle at
@@ -148,7 +151,8 @@ model reproduces exact diagonalisation on a ring at $K=1$ to eight digits,
 Eq.~\eqref{eq:U2}, and the large-$U$ expansion
 $E_{3}=-3U-3(K+1)t^{2}/(2U)+O(t^{4}/U^{3})$.
 
-\textit{Square-summable sector.---}Fix a root vertex and take the
+\section{Square-summable sector}
+Fix a root vertex and take the
 wavefunctions invariant under the automorphisms that fix it, which relabel
 the children of every vertex independently. A configuration is reduced to
 canonical form by relabelling branches in order of first use along the
@@ -235,25 +239,36 @@ particles are bound and no two are.}
 \label{fig:bind}
 \end{figure}
 
-\textit{Finite random regular graphs.---}On a finite random regular graph
-the Perron mode is a normalisable state, three free particles have their
-ground state at $-3(K+1)t$, and in the Borromean window the trimer is not
-the ground state of three particles but a state bound relative to the
-bulk continuum, coupled to the Perron-containing states with weight
-$O(1/N)$. To see it I diagonalise three distinguishable particles on
-random $3$-regular graphs of $N=100$, $150$ and $200$ vertices in the
-sector orthogonal to the Perron mode on every particle, and measure the
-probability that all three particles sit on one site in the three-body
-ground state and the probability that two do in the two-body ground
-state. A bound composite keeps a finite probability as $N$ grows; an
-unbound one loses it as $1/N$. \TODO{Fill from rrg\_q2: at $U=1.7$, inside
-the square-summable window $1.38<U<1.97$, the triple probability is ...
-and the pair probability ..., against ... and ... at $U=1.0$ below both
-thresholds and ... above $\Up$.} The bound trimer without a bound pair is
-a property of actual random regular graphs, in the sector the
+\section{Finite random regular graphs}
+On a finite random regular graph the Perron mode is a normalisable state,
+three free particles have their ground state at $-3(K+1)t$, and in the
+Borromean window the trimer is not the ground state of three particles but
+a state bound relative to the bulk continuum, coupled to the
+Perron-containing states with weight $O(1/N)$. To see it I diagonalise
+three and two distinguishable particles on random $3$-regular graphs in
+the sector orthogonal to the Perron mode on every particle, with a Lanczos
+product that applies the projector, and use as diagnostic the probability
+that all three particles sit on one site in the three-body ground state
+and that both do in the two-body ground state. A bound composite keeps a
+finite probability as $N$ grows; an unbound one loses it. Two features of
+finite random regular graphs enter. Their lowest bulk states sit on rare
+regions, short cycles first, which act as the deep sites of
+Sec.~\ref{sec:site} and bind pairs below the clean threshold; I therefore
+condition the graphs on girth at least $6$ by rejection sampling. And the
+level spacing at the band edge closes only as $N^{-2/3}$, so the approach
+to the thermodynamic limit is slow. With that, at $U=1.7\,t$, inside the
+square-summable window $1.37<U/t<1.97$, the triple probability is $0.12$,
+$0.13$ and $0.14$ at $N=100$, $150$ and $200$, three hundred times its
+value at $U=0$, while the pair probability falls from $0.12$ to $0.10$,
+$0.08$ and $0.08$ at $N=100$, $200$, $400$ and $800$, six times its
+$U=0$ value at $N=100$ and still falling; at $U=2.3\,t$, above $\Up$, the
+pair probability is $0.24$ at every $N$, and at $U=1.0\,t$, below both
+thresholds, both probabilities fall with $N$. The trimer is bound and the
+pair is not, on actual random regular graphs, in the sector the
 square-summable thresholds describe.
 
-\textit{Two identical fermions.---}The result depends on the three
+\section{Two identical fermions}
+The result depends on the three
 particles being distinguishable. In the sector antisymmetric under the
 exchange of particles 1 and 2, with attraction only between unlike
 particles, the ground energy never drops below the pair-plus-particle
@@ -275,7 +290,9 @@ threshold~\cite{abdullaev2025}, as in free
 space~\cite{kartavtsev2007}. The Borromean trimer of the tree is a
 three-flavour object.
 
-\textit{One deep site.---}Disorder enters at zero density through its
+\section{One deep site}
+\label{sec:site}
+Disorder enters at zero density through its
 rare sites. Give the root the energy $\eps_{0}<0$: a static impurity is a
 fourth particle that does not hop, the root-fixed sector is the natural
 one, and its bound states are localised at the impurity. One particle
@@ -307,7 +324,8 @@ Table~\ref{tab:thr}.}
 \label{fig:imp}
 \end{figure}
 
-\textit{Disordered tree.---}With box disorder $\eps_{i}\in[-W/2,W/2]$ on
+\section{Disordered tree}
+With box disorder $\eps_{i}\in[-W/2,W/2]$ on
 every site, the thresholds of Fig.~\ref{fig:imp} classify the sites in
 the isolated-site approximation of a Lifshitz tail, each site seen with a
 clean environment. For $W=2\eps_{c}$, at $U=0.5\,\Up$ a fraction $0.14$
@@ -320,7 +338,8 @@ around a site, which shifts its thresholds in either direction, and it is
 a statement about localised few-body states, not about the many-body
 phases; those need the finite-density calculation.
 
-\textit{Discussion.---}The model is realised, with its three flavours, by
+\section{Discussion}
+The model is realised, with its three flavours, by
 $^{6}$Li, whose three lowest hyperfine states have attractions tuned
 together by a magnetic field, load into optical lattices, and show their
 three-body physics in recombination
@@ -354,7 +373,8 @@ the centre-of-mass band of the bound trimer fills the region below the
 edge, and the square-root edge of the Kesten--McKay density leaves the
 question open in principle.
 
-In conclusion, on the Bethe lattice three distinguishable particles bind
+\section{Conclusions}
+On the Bethe lattice three distinguishable particles bind
 before two, in both of the tree's sectors and in a window that widens with
 the degree, and a shallow site holds three before it holds two.
 
