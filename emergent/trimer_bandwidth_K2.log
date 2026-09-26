@@ -5,3 +5,4 @@ K=2 L=30 U=4.0: 11 states below the edge -9.259; band [-13.3986, -12.3846] width
 K=2 L=40: 595437 states (90s)
 K=2 L=40 U=2.5: 14 states below the edge -8.598; band [-9.9285, -8.8157] width 1.1128 -> t3 = 0.1967   (next state -8.5759)
 K=2 L=40 U=3.0: 14 states below the edge -8.771; band [-10.9681, -10.1438] width 0.8243 -> t3 = 0.1457   (next state -8.7513)
+K=2 L=40 U=4.0: 14 states below the edge -9.259; band [-13.4013, -12.9098] width 0.4915 -> t3 = 0.0869   (next state -9.2490)
