@@ -18,7 +18,7 @@ ax.set_yscale("log"); ax.set_xlabel("support radius $r$"); ax.set_ylabel("percol
 ax.set_xticks([0, 1, 2, 3]); ax.set_ylim(1e-4, 1)
 ax.legend(frameon=False, fontsize=7, loc="lower left")
 for s in ("top", "right"): ax.spines[s].set_visible(False)
-ax.text(-0.42, 1.02, "(a)", transform=ax.transAxes, fontsize=9, fontweight="bold")
+fig.text(0.01, 0.95, "(a)", fontsize=9, fontweight="bold")
 # (b) critical disorder of the composites vs U
 loc = json.load(open("../emergent/localization.json"))
 ax = axes[1]
@@ -34,5 +34,5 @@ ax.set_ylim(0.3, 50)
 ax.text(2.6, 21, "one particle", fontsize=6.5, color=B); ax.text(2.6, 38, "one particle", fontsize=6.5, color=R)
 ax.text(3.2, 6.5, "pair", fontsize=7, color="#555555"); ax.text(3.6, 1.35, "trimer", fontsize=7, color="#555555")
 for s in ("top", "right"): ax.spines[s].set_visible(False)
-ax.text(-0.42, 1.02, "(b)", transform=ax.transAxes, fontsize=9, fontweight="bold")
+fig.text(0.52, 0.95, "(b)", fontsize=9, fontweight="bold")
 fig.tight_layout(w_pad=1.2); fig.savefig("fig4.pdf"); fig.savefig("fig4.png", dpi=150)
