@@ -198,3 +198,11 @@ mechanism, Mattis 2+1 no-go (exchange argument lattice-independent by Cauchy
 interlacing), no Efimov tower, trionic phase (Rapp). 6Li in optical lattices
 tests the cubic window, not the tree; hyperbolic circuit-QED lattices named as
 the home of the two-sector physics.
+
+Refocus (2026-09-26): manuscript now "Emergent hyperedges from pairwise
+dynamics". Sec. II defines an emergent hyperedge (irreducible k-body bound state;
+without faces = Borromean) and the operational test on finite graphs (P_k finite
+as N grows, P_{k-1} -> 0; free: N^{1-k}; bound (k-1)-cluster + free: 1/N). The
+RRG girth-6 section is the test. Nine network-science/information references
+added from memory (battiston2021, bick2023, bianconi2021, lambiotte2019,
+iacopini2019, neuhauser2020, sun2023, rosas2019, williams2010): verify.

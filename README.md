@@ -48,9 +48,13 @@ even multiple; 6e is the realized "triple".
   (trimer/bs.py). L=60 runs may still be finishing (scan_bs_K*_L60.log).
 * paper/main.tex: after a PRL-style referee report (~/Downloads/prl_review.md)
   the manuscript was revised (all six major points) and retargeted to
-  Physical Review E; response in ~/Downloads/prl_response.md. 2026-09-26:
-  new section "Finite density" (trimer Fermi liquid vs colour superfluid,
-  trimer/phase.py, fig3).
+  Physical Review E. 2026-09-26: new section "Finite density" (trimer Fermi
+  liquid vs colour superfluid, trimer/phase.py, fig3); after a colleague's
+  review the manuscript was reframed and then refocused as "Emergent
+  hyperedges from pairwise dynamics" (definition + operational test of an
+  emergent hyperedge; the Bethe-lattice trimer as the worked case; two
+  thresholds on expanders with statistics selecting the sector). Earlier
+  versions: paper/main_v1.tex (PRL), main_v2.tex (PRE, physics framing).
 * Next: impurity scan at K = 4, 6, 10; finite disorder W on a random
   regular graph (fraction of sites in the Borromean window as a function
   of W and U); three-colour cavity at finite density (notes.md).

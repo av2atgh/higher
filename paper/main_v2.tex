@@ -13,167 +13,117 @@
 
 \begin{document}
 
-\title{Emergent hyperedges from pairwise dynamics}
+\title{Borromean trimers on the Bethe lattice}
+
 \author{Alexei Vazquez}
 \email{alexei@nodeslinks.com}
 \affiliation{Nodes \& Links Ltd, Salisbury House, Station Road, Cambridge, CB1 2LA, UK}
 \date{\today}
 
 \begin{abstract}
-Higher-order networks take group interactions as given: a hyperedge is a
-datum. I ask whether a group interaction can emerge from pairwise ones,
-and give a mechanism, a definition and an operational test. On a graph
-whose edges carry only pairwise couplings, a $k$-body object is an
-emergent hyperedge when it is bound while none of its $(k-1)$-body faces
-is, the Borromean binding of few-body physics; on a finite graph it is
-detected by a $k$-fold coincidence probability that stays finite as the
-graph grows while the $(k-1)$-fold ones vanish. The sparse random graphs
-of network science produce such an object from the simplest pairwise
-dynamics: three distinguishable particles hopping on a random regular
-graph with on-site attraction $U$ bind into a trimer before any pair
-binds. On the Bethe lattice, the locally tree-like limit, the pair
-threshold is obtained in closed form and the trimer threshold numerically
-for branching $K=2$ to $10$, and the trimer binds first with a window
-that widens with the degree. Random graphs are expanders, which gives
-their composites two thresholds, one for a square-summable state and one
-for the uniform Perron mode below the spectral gap, a distinction
-lattices lack; quantum statistics selects which one a many-body phase
-sees, and the window that governs a dilute three-flavour gas is the
-cross-sector one, $3\%$ of the pair threshold at $K=2$ and $13\%$ at
-$K=10$. The test is passed on finite random regular graphs; two identical
-fermions and a third particle never form the object, a selection rule
-for emergence; and on a heterogeneous graph the hyperedges nucleate on
-rare deep sites, at $0.6$ of the attraction those sites need to bind a
-pair. Hyperedges inferred from data can therefore be products of
-pairwise dynamics on the underlying graph, invisible to pairwise
-inference by construction.
+Three particles can be bound when no two of them are. On a lattice this
+Borromean binding of three distinguishable particles with on-site
+attraction $U$ and hopping $t$ is known from Mattis and Rudin; I revisit
+it on the Bethe lattice, the infinite tree that random regular graphs
+resemble locally, and find that the tree adds one thing a lattice cannot
+have. On a non-amenable graph a composite has two binding thresholds,
+one for a square-summable state and one for a state whose centre of mass
+is the uniform Perron mode, which the spectral gap places below the band;
+and quantum statistics selects which one a many-body phase sees, since a
+bosonic composite condenses into the Perron mode and binds at the uniform
+threshold while a fermionic composite fills a band and binds at the
+square-summable one. I compute both thresholds for the pair, in closed
+form, and for the trimer, numerically, for branching $K=2$ to $10$. The
+trimer binds before the pair in all three comparisons, square-summable
+against square-summable, uniform against uniform, and the cross-sector
+one that governs the dilute three-flavour gas, a fermionic trimer against
+a condensed pair, whose window is $3\%$ of the pair threshold at $K=2$
+and $13\%$ at $K=10$. A Fermi liquid of trimers is then the ground state
+below a density that vanishes at the trimer threshold. The ordering is
+verified on finite random regular graphs; the fermionic no-go of Mattis
+follows from an exchange argument that holds on any graph; and a site too
+shallow to hold one particle holds three at $0.6$ of the attraction at
+which it holds two.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-Network science has spent the last decade adding group interactions to
-graphs. Hypergraphs and simplicial complexes represent interactions
-among three or more units at once, and on them contagion,
-synchronisation, consensus and percolation behave differently from their
-pairwise versions~\cite{battiston2020,battiston2021,bick2023,bianconi2021,lambiotte2019,iacopini2019,neuhauser2020,sun2023}.
-In all of this the hyperedge is an input: measured, as a co-authorship
-or a protein complex, or postulated. The converse question is asked less
-often. Given a graph whose edges carry only pairwise couplings, can the
-dynamics on it produce an object that is irreducibly three-body, a group
-that exists although no pair within it does? If it can, then a hyperedge
-found in data need not be a datum of the system: it may be what
-pairwise dynamics on the underlying graph makes, and a pairwise
-inference on the same data would miss it by construction, in the way
-that pairwise correlations miss the parity of three bits that are
-pairwise independent~\cite{williams2010,rosas2019}.
+Two particles are the unit of the theory of
+superconductivity. Three particles are the unit of Efimov physics: with a
+resonant two-body interaction, three particles have a tower of bound states
+even when no pair is bound~\cite{efimov1970,nielsen2001}, which has been
+observed in ultracold caesium~\cite{kraemer2006} and in the helium
+trimer~\cite{kunitski2015}. Bound triples without bound pairs, Borromean
+states, are also known on lattices, where the band structure replaces the
+resonance: on the cubic lattice three distinguishable particles with
+on-site attraction bind at an attraction below the pair threshold, while
+two identical fermions and a third particle do
+not~\cite{mattis1984,mattis1986}. In many-body physics the triple appears
+as the trion of three-flavour attractive fermions, the cold-atom analogue
+of the baryon, which competes with the colour superfluid of
+pairs~\cite{rapp2007,inaba2009,inaba2010} and has a Cooper-problem
+analogue, the Cooper triple~\cite{niemann2012,akagami2021,tajima2022}; as
+the charge-$6e$ condensate of three bound Cooper pairs~\cite{ge2024}; as
+the light clusters of warm nuclear matter, where Pauli blocking
+dissolves the deuteron before the triton~\cite{typel2010}; and, as the
+ordered-phase cousin of Borromean binding rather than a realisation of
+it, as the Borromean super-counterfluid of three-component mixtures, in
+which a cubic coupling locks three inter-component phases at once so that
+the three-component counterflow is superfluid while no component and no
+pair is~\cite{blomquist2021,babaev2024,kuklov2025}.
 
-Physics has a name for the sharpest version of such an object. Three
-particles can be bound when no two of them are: the Borromean binding of
-Efimov physics, with its tower of trimers at a two-body
-resonance~\cite{efimov1970,nielsen2001,kraemer2006,kunitski2015}, of halo
-nuclei, and, on lattices, of three distinguishable particles with on-site
-attraction, where the band edge replaces the resonance and the triple
-binds at an attraction below the pair threshold~\cite{mattis1984,mattis1986}.
-A bound triple with no bound pair is a $3$-hyperedge with none of its
-$2$-faces, a hypergraph that is not a simplicial complex, since a
-simplex would carry its edges. It is also the strongest form the notion
-of an emergent group interaction can take: not an effective coupling
-that appears in a coarse-grained description, but a persistent composite
-entity, a bound state, made by pairwise couplings alone.
-
-This paper puts the mechanism on the graphs network science uses. A
-sparse random graph is locally a tree, its local physics in the
-thermodynamic limit is that of the Bethe lattice of the same degree,
-where the cavity method is exact~\cite{abouchacra1973,vazquez2023pre},
-and on that lattice the attractive Hubbard model has been solved by
-dynamical mean-field theory~\cite{keller2001,garg2005,toschi2005}, with
+Random networks are the other place where the pair-versus-triple question
+has consequences. A random regular graph is locally a tree, its local
+physics in the thermodynamic limit is that of the Bethe lattice of the
+same degree, where the cavity method is
+exact~\cite{abouchacra1973,vazquez2023pre}, and on that lattice the
+attractive Hubbard model has been solved by dynamical mean-field
+theory~\cite{keller2001,garg2005,toschi2005}, with
 disorder~\cite{ioffe2010,feigelman2010} and with three
-flavours~\cite{inaba2009,inaba2010}, where the triple appears as the
-trion that competes with the colour superfluid of
-pairs~\cite{rapp2007,inaba2009,inaba2010}. Yet whether the triple or the
-pair forms first as the attraction grows at zero density is not known on
-a tree, and a tree raises a question a lattice does not: it is an
-expander, its uniform mode lies below the band by the spectral gap and
-is not square-summable, so a composite has two thresholds, not one.
-Section~\ref{sec:def} defines an emergent hyperedge and its operational
-test. Sections~\ref{sec:model} to~\ref{sec:l2} compute the pair and
-trimer thresholds on the Bethe lattice in both sectors, the pair ones in
-closed form. Section~\ref{sec:rrg} runs the test on finite random
-regular graphs. Section~\ref{sec:density} shows that quantum statistics
-selects which threshold a many-body phase sees, Sec.~\ref{sec:fermions}
-that statistics can also forbid the object, and Secs.~\ref{sec:site}
-and~\ref{sec:disorder} where it nucleates on a heterogeneous graph.
+flavours~\cite{inaba2009,inaba2010}. Yet the few-body anchor of these
+phase diagrams, whether the trion or the pair forms first as the
+attraction grows at zero density, is not known on a tree, and a tree
+raises a question a lattice does not: its uniform mode is not
+square-summable, so a composite has two thresholds, not one.
 
-It helps to say at the outset what here is a new instance of known
-physics, what is new as a result of calculation, and what is new. Known,
-and recovered on a new graph, are four things: that a band edge alone
-produces Borromean binding of three distinguishable particles, the result
-of Mattis and Rudin on the cubic lattice~\cite{mattis1984}; that two
-identical fermions and a third particle do not bind, Mattis's
-no-go~\cite{mattis1986}, which the exchange argument of
-Sec.~\ref{sec:fermions} shows to hold on any graph; that a lattice has no
-Efimov tower, which was Mattis's point and which the count of
-Sec.~\ref{sec:conclusions} confirms; and that the three-flavour gas has a
-trionic phase at strong coupling~\cite{rapp2007,inaba2010}, here extended
-to zero density with a point-trimer estimate. New as results of
-calculation are the closed-form pair thresholds in both sectors,
-Eqs.~\eqref{eq:U2} and~\eqref{eq:U2L2}, their exact large-$K$ limits from
-the semicircle density, the monotonic growth of the Borromean window with
-the degree, the thresholds at a single deep site and on a disordered
-tree, and the direct verification on random regular graphs conditioned on
-girth. New are two things. For network science, the definition of an
-emergent hyperedge with a test that a three-point statistic passes and
-every two-point statistic fails, and the demonstration that the sparse
-random graphs of the field produce one from the simplest pairwise
-dynamics. For physics, that on an expander a composite has two
+It helps to say at the outset what in this paper is a new instance of
+known physics, what is new as a result of calculation, and what is new
+physics. Known, and recovered here on a new graph, are four things: that
+a band edge alone produces Borromean binding of three distinguishable
+particles, the result of Mattis and Rudin on the cubic
+lattice~\cite{mattis1984}; that two identical fermions and a third
+particle do not bind, Mattis's no-go~\cite{mattis1986}, which the
+exchange argument of Sec.~\ref{sec:fermions} shows to hold on any graph;
+that a lattice has no Efimov tower, which was Mattis's point and which
+the count of Sec.~\ref{sec:conclusions} confirms; and that the
+three-flavour gas has a trionic phase at strong
+coupling~\cite{rapp2007,inaba2010}, here extended to zero density with a
+point-trimer estimate. New as results of calculation, and useful for the
+random-graph and dynamical-mean-field literature, are the closed-form
+pair thresholds in both sectors, Eqs.~\eqref{eq:U2}
+and~\eqref{eq:U2L2}, their exact large-$K$ limits from the semicircle
+density, the monotonic growth of the Borromean window with the degree,
+the thresholds at a single deep site and on a disordered tree, and the
+direct verification of the ordering on random regular graphs conditioned
+on girth. New physics, in the sense of a statement with no lattice
+counterpart, is one thing: on a non-amenable graph a composite has two
 thresholds, separated by the spectral gap that the Alon--Boppana bound
-makes unavoidable~\cite{alon1986,nilli1991}, and that quantum statistics
-selects which one a many-body phase sees: a bosonic composite condenses
-into the Perron mode and binds at the uniform threshold, a fermionic
-composite fills a band and binds at the square-summable one, so that the
-window governing the dilute phase diagram is the cross-sector one, and
-the ordering holds in all three comparisons.
-
-\section{What an emergent hyperedge is}
-\label{sec:def}
-Let $G$ be a graph and $H$ a Hamiltonian whose terms live on the vertices
-and edges of $G$ only, $H=\sum_{i}h_{i}+\sum_{\langle ij\rangle}h_{ij}$,
-acting on $k$ particles. Write $E_{k}$ for the $k$-body ground energy and
-$e_{\min}$ for the one-body one. For every partition of the $k$ particles
-into clusters the sum of the clusters' ground energies is an energy the
-$k$ particles can reach without binding as a whole. A $k$-body bound
-state is \emph{irreducible} when $E_{k}$ lies below every such sum with
-more than one cluster, and it is an \emph{emergent hyperedge without
-faces}, the Borromean case, when in addition no proper sub-cluster is
-bound at all, $E_{j}=j\,e_{\min}$ for $1<j<k$. With a coupling $U$ that
-tunes the attraction, each cluster size has a threshold $U_{k}$ at which
-$E_{k}$ first drops below $k\,e_{\min}$, and the hyperedge without faces
-exists in the window $U_{k}<U<U_{k-1}$, whose width measures how
-strongly the graph favours the group over its parts.
-
-On a finite graph of $N$ vertices the definition has an operational
-form. Let $P_{k}$ be the probability, in the $k$-body ground state, that
-all $k$ particles occupy one vertex. A bound composite is a localised
-relative motion carried by a centre of mass that spreads over the graph,
-so $P_{k}$ stays finite as $N$ grows; an unbound one spreads its
-particles independently and $P_{k}$ vanishes, as $N^{1-k}$ for $k$ free
-particles and as $1/N$ for a bound $(k-1)$-cluster and a free particle. An emergent hyperedge is a
-$k$-fold coincidence that survives the thermodynamic limit while every
-$(k-1)$-fold one dies. This is the analogue, for a ground state, of the
-information-theoretic notion of an irreducible dependence, a synergy that
-no subset of the variables carries~\cite{williams2010,rosas2019}, and it
-says in one line why pairwise inference cannot see the object: the
-statistic that detects it is a $k$-point function, and all the
-$(k-1)$-point functions of the state are those of free particles.
-
-The rest of the paper is the case $k=3$ on the sparse random graphs of
-network science, with the simplest pairwise $H$: hopping along the edges
-and attraction on the vertices.
+makes unavoidable~\cite{alon1986,nilli1991}, and quantum statistics
+selects which one a many-body phase sees. A bosonic composite condenses
+into the Perron mode and binds at the uniform threshold; a fermionic
+composite fills a band and binds at the square-summable one.
+Section~\ref{sec:density} is the evidence: the chemical potential of the
+colour superfluid tends to the uniform-sector pair energy, while the
+trimer liquid starts from the square-summable bottom. The window that
+governs the dilute phase diagram is therefore the cross-sector one, a
+fermionic trimer against a condensed pair, and the ordering holds in all
+three comparisons, which is a stronger statement than any one of the
+numbers in Table~\ref{tab:thr}.
 
 \section{Model and the two thresholds}
 \label{sec:model}
-The graph is the Bethe lattice of
+Consider the Bethe lattice of
 degree $z=K+1$, the infinite tree in which every vertex has $K+1$
 neighbours, with $K$ the branching. Distinguishable particles
 $p=1,\dots,m$ hop between neighbouring vertices with amplitude $-t$ and
@@ -396,9 +346,7 @@ particles are bound and no two are.}
 \label{fig:bind}
 \end{figure}
 
-\section{Emergent hyperedges on random regular graphs}
-\label{sec:rrg}
-This section runs the test of Sec.~\ref{sec:def} on actual random graphs.
+\section{Finite random regular graphs}
 On a finite random regular graph the Perron mode is a normalisable state,
 three free particles have their ground state at $-3(K+1)t$, and in the
 Borromean window the trimer is not the ground state of three particles but
@@ -424,13 +372,9 @@ $U=0$ value at $N=100$ and still falling; at $U=2.3\,t$, above $\Up$, the
 pair probability is $0.24$ at every $N$, and at $U=1.0\,t$, below both
 thresholds, both probabilities fall with $N$. The trimer is bound and the
 pair is not, on actual random regular graphs, in the sector the
-square-summable thresholds describe. This is an emergent hyperedge in
-the sense of Sec.~\ref{sec:def}: a three-point coincidence that survives
-the thermodynamic limit, produced by couplings that live on the edges of
-the graph, while every two-point coincidence decays as that of free
-particles.
+square-summable thresholds describe.
 
-\section{Which composites a many-body phase forms}
+\section{Finite density}
 \label{sec:density}
 The two sectors acquire their meaning at finite density, and this section
 is the evidence for the claim of the introduction that statistics selects
@@ -505,9 +449,9 @@ Dotted lines mark $\Ut$, $\Up^{\rm u}$ and $\Up$ from Table~\ref{tab:thr}.}
 \label{fig:phase}
 \end{figure}
 
-\section{Statistics as a selection rule}
+\section{Two identical fermions}
 \label{sec:fermions}
-Emergence depends on the three
+The result depends on the three
 particles being distinguishable. In the sector antisymmetric under the
 exchange of particles 1 and 2, with attraction only between unlike
 particles, the ground energy never drops below the pair-plus-particle
@@ -531,13 +475,12 @@ equal-mass $2+1$ problem has no discrete spectrum below the continuum at
 strong coupling, a trimer requiring a mass ratio above a
 threshold~\cite{abdullaev2026}, as in free
 space~\cite{kartavtsev2007}. The Borromean trimer of the tree is a
-three-flavour object: quantum statistics is a selection rule on which
-groups can emerge from pairwise couplings.
+three-flavour object.
 
-\section{Where hyperedges nucleate: one deep site}
+\section{One deep site}
 \label{sec:site}
-Real graphs are heterogeneous, and heterogeneity enters at zero density
-through its rare sites. Give the root the energy $\eps_{0}<0$: a static impurity is a
+Disorder enters at zero density through its
+rare sites. Give the root the energy $\eps_{0}<0$: a static impurity is a
 fourth particle that does not hop, the root-fixed sector is the natural
 one, and its bound states are localised at the impurity. One particle
 binds when $|\eps_{0}|>\eps_{c}=(K-1)t/\sqrt{K}$, from
@@ -569,7 +512,6 @@ Table~\ref{tab:thr}.}
 \end{figure}
 
 \section{Disordered tree}
-\label{sec:disorder}
 With box disorder $\eps_{i}\in[-W/2,W/2]$ on
 every site, the thresholds of Fig.~\ref{fig:imp} classify the sites in
 the isolated-site approximation of a Lifshitz tail, each site seen with a
@@ -581,72 +523,52 @@ sites hold one particle outright and the Borromean fraction at
 $U=0.5\,\Up$ is $0.07$ or $0.09$. The approximation ignores the disorder
 around a site, which shifts its thresholds in either direction, and it is
 a statement about localised few-body states, not about the many-body
-phases; those need the finite-density calculation. For a network the
-lesson is where to look: emergent hyperedges nucleate on the rare deep
-sites of a heterogeneous graph, and on a finite random graph, on its
-short cycles, before they exist in the bulk.
+phases; those need the finite-density calculation.
 
 \section{Conclusions}
 \label{sec:conclusions}
-A pairwise Hamiltonian on a sparse random graph produces a bound triple
-with no bound pair: an emergent hyperedge without faces, detectable by a
-three-point statistic and invisible to every two-point one. The mechanism
-is the band-edge Borromean binding of Mattis and Rudin~\cite{mattis1984}
-placed on the graphs of network science, and what those graphs add is
-that they are expanders: a composite on them has two thresholds, and
-quantum statistics chooses between them, pairs condensing into the Perron
-mode and binding at the uniform threshold, trimers filling a band and
-binding at the square-summable one. The ordering holds in both sectors
-and across them, and the cross-sector window, a few per cent at $K=2$
-growing to $13\%$ at $K=10$, is the one a Fermi liquid of trimers enjoys
-at low density against a colour superfluid. The exact pair thresholds,
-their large-$K$ limits, the growth of the window with the degree, the
-deep-site and disorder thresholds and the finite-graph verification are
-the calculational content.
+On the Bethe lattice three distinguishable particles bind before two.
+That they do is the band-edge mechanism of Mattis and
+Rudin~\cite{mattis1984} on a new graph, and the fermionic no-go and the
+absence of an Efimov tower are Mattis's~\cite{mattis1986} as well. What
+the tree adds is that a composite on a non-amenable graph has two
+thresholds, and that statistics chooses between them: pairs condense
+into the Perron mode and bind at the uniform threshold, trimers fill a
+band and bind at the square-summable one. The ordering holds in both
+sectors and across them, and the cross-sector window, a few per cent at
+$K=2$ growing to $13\%$ at $K=10$, is the one a Fermi liquid of trimers
+enjoys at low density against a colour superfluid. The exact pair
+thresholds, their large-$K$ limits, the growth of the window with the
+degree, the deep-site and disorder thresholds and the finite-graph
+verification are the calculational content; a shallow site holds three
+before it holds two.
 
-For network science the consequences are three. First, a hyperedge
-inferred from data is not by itself evidence of a group interaction in
-the system's rules: before a hypergraph is fitted, the null hypothesis
-that pairwise dynamics on the graph produces the group should be
-considered, and Sec.~\ref{sec:def} says what would falsify it, a
-$k$-fold coincidence that does not survive when the $(k-1)$-fold ones
-do. Second, the object is invisible to pairwise inference by
-construction, so a correlation network or a graphical model fitted to
-pairwise statistics of such a state will report free particles; the
-detection statistic is the $k$-point coincidence, the ground-state
-counterpart of an interaction information. Third, heterogeneity favours
-emergence: a site too shallow to hold one particle holds three at $0.6$
-of the attraction at which it holds two, and on a finite random graph
-the short cycles play that role, so the first emergent hyperedges of a
-network sit on its rare regions, and a survey that averages over the
-graph will not find them. Whether the same holds for classical pairwise
-dynamics, where the candidates are a three-body activation that
-percolates when no pairwise process does and the parity dependences of
-Boolean dynamics, is the question this paper leaves open; the definition
-of Sec.~\ref{sec:def} applies to them unchanged once the ground state is
-replaced by the stationary state.
-
-The quantum model is realised, with its three flavours, by $^{6}$Li,
-whose three lowest hyperfine states have attractions tuned together by a
-magnetic field, load into optical lattices, and show their three-body
-physics in recombination losses~\cite{ottenstein2008,huckans2009,williams2009}. An
+The model is realised, with its three flavours, by $^{6}$Li, whose three
+lowest hyperfine states have attractions tuned together by a magnetic
+field, load into optical lattices, and show their three-body physics in
+recombination losses~\cite{ottenstein2008,huckans2009,williams2009}. An
 optical lattice is cubic, so what such an experiment tests is the
 cubic-lattice window of Mattis and Rudin, $35\%$ by the calculation of
-Sec.~\ref{sec:l2}, and not the graph; the expander content, the two
-sectors, needs a non-amenable graph, and its natural home is a hyperbolic
-lattice in circuit quantum
+Sec.~\ref{sec:l2}, and not the tree; the tree's specific content, the two
+sectors, needs a non-amenable graph. The natural home for that is a
+hyperbolic lattice in circuit quantum
 electrodynamics~\cite{kollar2019,boettcher2020}, where the separation of
 the uniform mode from the bulk band is already the observable and where
 the composites, being photonic, are bosonic and see the uniform
-thresholds. For electrons the selection rule of Sec.~\ref{sec:fermions}
-says that negative-$U$ centres in amorphous
+thresholds. For electrons the $2+1$ result is a selection rule:
+negative-$U$ centres in amorphous
 semiconductors~\cite{anderson1975,weaire1971}, which bind spin-paired
 electrons, cannot by themselves produce Borromean three-electron centres;
 a third flavour, orbital or valley, or a mass imbalance is needed.
 
+For networks the trimer is a dynamically generated higher-order
+interaction, a bound triple with no bound pair from a pairwise
+Hamiltonian, a hyperedge without its faces~\cite{vazquez2023pre,battiston2020},
+of the kind that pairwise inference cannot see.
+
 Last, the Efimov question. The effect is a lattice effect in the sense of
 Mattis~\cite{mattis1986}, a consequence of the band edge rather than of a
-resonance, and a tower is not expected on a graph. The count confirms
+resonance, and a tower is not expected on a lattice. The count confirms
 it: the states below the three-body edge in the uniform sector at
 $U=\Up^{\rm u}$, where the pair is at resonance, number one for $K=2$ and
 $3$, unchanged from $L=60$ to $180$, with the next state approaching the
