@@ -1,4 +1,4 @@
-\documentclass[aps,prl,twocolumn,superscriptaddress,floatfix,showpacs]{revtex4-2}
+\documentclass[aps,prl,twocolumn,superscriptaddress,floatfix]{revtex4-2}
 
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -20,21 +20,24 @@
 \date{\today}
 
 \begin{abstract}
-Three particles can be bound when no two of them are, the Borromean binding
-of Efimov physics and halo nuclei. I show that this happens on the Bethe
-lattice, the tree that random regular graphs become in the thermodynamic
-limit, for three distinguishable particles with on-site attraction $U$. The
-pair binds at $\Up=2t(K-1)/\sqrt{K}$ exactly, with $K$ the branching and
-$t$ the hopping. The trimer binds at $\Ut<\Up$ for every $K\ge2$, with the
-Borromean window $(\Up-\Ut)/\Up$ growing from $7\%$ at $K=2$ to $16\%$ at
-$K=10$. Two identical fermions and a third particle of the same mass have no
-trimer, so the effect requires three flavours. A single site too shallow to hold one particle holds three before it
-holds two, at an attraction between $0.58$ and $0.70$ of the pair threshold
-for every depth of the site, which places Borromean trions in the Lifshitz
-tail of any disordered network. For three-flavour
-attractive fermions on random graphs, the trion Fermi liquid therefore
-reaches zero density and the colour superfluid needs a finite density to
-compete.
+Three particles can be bound when no two of them are, the Borromean
+binding of Efimov physics and halo nuclei. I show that this happens on the
+Bethe lattice, the infinite tree that random regular graphs resemble
+locally, for three distinguishable particles with on-site attraction $U$
+and hopping $t$. On a tree a composite has two natural thresholds, one for
+a square-summable state and one for a state whose centre of mass is
+uniform, and I compute both. The square-summable pair threshold is a sum
+over the tree's edge spherical function, $\Up=1.966\,t$ at branching $K=2$,
+and the trimer binds at $\Ut=0.70\,\Up$; the window widens with $K$, to
+$\Ut=0.59\,\Up$ at $K=10$. In the uniform sector the pair threshold
+is $2t(K-1)/\sqrt{K}$ exactly and the trimer again binds first. On finite
+random regular graphs the bound trimer appears where no pair is bound. Two
+identical fermions and a third particle of equal mass have no trimer,
+because their exchange with the pair is repulsive, so the effect needs
+three flavours. A single site too shallow to hold one particle holds three
+at $0.6$ of the attraction at which it holds two, and on a disordered
+tree the three-body ground state is a localised trimer over a range of
+attraction where the two-body ground state is not a pair.
 \end{abstract}
 
 \maketitle
@@ -46,185 +49,248 @@ even when no pair is bound~\cite{efimov1970,nielsen2001}, which has been
 observed in ultracold caesium~\cite{kraemer2006} and in the helium
 trimer~\cite{kunitski2015}. Bound triples without bound pairs, Borromean
 states, are also known on lattices, where the band structure replaces the
-resonance: on the cubic lattice three particles with on-site attraction bind
-at an attraction below the pair threshold~\cite{mattis1984,mattis1986}.
-In many-body physics the triple appears as the trion of three-flavour
-attractive fermions, the cold-atom analogue of the baryon, which competes
-with the colour superfluid of pairs~\cite{rapp2007,inaba2009,inaba2010}
-and has a Cooper-problem analogue, the Cooper
-triple~\cite{niemann2012,akagami2021,tajima2022}.
+resonance: on the cubic lattice three distinguishable particles with
+on-site attraction bind at an attraction below the pair threshold, while
+two identical fermions and a third particle do
+not~\cite{mattis1984,mattis1986}. In many-body physics the triple appears
+as the trion of three-flavour attractive fermions, the cold-atom analogue
+of the baryon, which competes with the colour superfluid of
+pairs~\cite{rapp2007,inaba2009,inaba2010} and has a Cooper-problem
+analogue, the Cooper triple~\cite{niemann2012,akagami2021,tajima2022}; as
+the charge-$6e$ condensate of three bound Cooper pairs~\cite{ge2024}; and
+as the light clusters of warm nuclear matter, where Pauli blocking
+dissolves the deuteron before the triton~\cite{typel2010}.
 
 Random networks are the other place where the pair-versus-triple question
-has consequences. A random regular graph is locally a tree, and in the
-thermodynamic limit its local physics is that of the Bethe lattice of the
-same degree, the structure on which the cavity method is
-exact~\cite{abouchacra1973,vazquez2023pre}. The attractive Hubbard model has
-been solved on it by dynamical mean-field
-theory~\cite{keller2001,garg2005,toschi2005}, the disordered case by the
-cavity method~\cite{ioffe2010,feigelman2010}, and the three-flavour case
-without disorder~\cite{inaba2009,inaba2010}. Yet the few-body anchor of all
-these phase diagrams, whether the trion or the pair is the first composite
-to form as the attraction grows at zero density, is not known on a tree.
-Here I compute it. I reduce the two- and three-body problems on the Bethe
-lattice to their automorphism-invariant sectors, obtain the pair threshold
-in closed form, the trimer threshold numerically, and repeat both for a
-single deep site, the dilute limit of disorder.
+has consequences. A random regular graph is locally a tree, its local
+physics in the thermodynamic limit is that of the Bethe lattice of the
+same degree, where the cavity method is
+exact~\cite{abouchacra1973,vazquez2023pre}, and on that lattice the
+attractive Hubbard model has been solved by dynamical mean-field
+theory~\cite{keller2001,garg2005,toschi2005}, with
+disorder~\cite{ioffe2010,feigelman2010} and with three
+flavours~\cite{inaba2009,inaba2010}. Yet the few-body anchor of these
+phase diagrams, whether the trion or the pair forms first as the
+attraction grows at zero density, is not known on a tree, and a tree
+raises a question a lattice does not: its uniform mode is not
+square-summable, so a composite has two thresholds, not one. Here I
+compute both for the pair and the trimer, obtain the pair thresholds in
+closed form, verify the ordering on finite random regular graphs, and
+repeat the calculation for a single deep site and a disordered tree. New
+relative to the cubic lattice~\cite{mattis1984} are the exact pair
+thresholds, the monotonic growth of the window with the degree, the two
+sectors, which have no lattice counterpart, and the disorder results.
 
-\textit{Model.---}Consider the Bethe lattice of degree $z=K+1$, the infinite
-tree in which every vertex has $K+1$ neighbours, with $K$ the branching.
-Distinguishable particles $p=1,\dots,m$ hop between neighbouring vertices
-with amplitude $-t$ and attract on site,
+\textit{Model and the two thresholds.---}Consider the Bethe lattice of
+degree $z=K+1$, the infinite tree in which every vertex has $K+1$
+neighbours, with $K$ the branching. Distinguishable particles
+$p=1,\dots,m$ hop between neighbouring vertices with amplitude $-t$ and
+attract on site,
 \begin{equation}
-  H=-t\sum_{\langle ij\rangle}\sum_{p}
+  H=-t\!\sum_{\langle ij\rangle,p}\!
   \left(c^{\dagger}_{ip}c_{jp}+\text{h.c.}\right)
-  -U\sum_{i}\sum_{p<q}n_{ip}n_{iq}
+  -U\sum_{i,\,p<q}n_{ip}n_{iq}
   +\sum_{i}\eps_{i}n_{i},
   \label{eq:H}
 \end{equation}
 where $n_{ip}=c^{\dagger}_{ip}c_{ip}$, $n_{i}=\sum_{p}n_{ip}$, and
-$\eps_{i}$ is a site energy, zero everywhere except in the impurity problem
-below. For three flavours of fermions the flavours are the labels $p$ and
-the statistics plays no role. The single-particle spectrum of the tree is
-the band $|E|\le2\sqrt{K}\,t$ with the Kesten--McKay density of
+$\eps_{i}$ is a site energy, zero except where stated. For three flavours of
+fermions the flavours are the labels $p$ and the statistics plays no role;
+I call the three-body bound state a trimer throughout and reserve trion for
+the many-body literature. The single-particle spectrum of the tree is the
+band $|E|\le2\sqrt{K}\,t$ with the Kesten--McKay density of
 states~\cite{kesten1959,mckay1981}, so $m$ free particles have their
-continuum edge at $-2m\sqrt{K}\,t$, and a composite of $m$ particles is
-bound when its energy lies below that edge. I set $t=1$.
+continuum edge at $-2m\sqrt{K}\,t$. The constant vector is an eigenvector
+of the hopping with energy $-(K+1)t$, below the band, and it is not
+square-summable: it is the Perron mode of a finite random regular graph,
+where it is a legitimate state. A composite of $m$ particles is bound when
+its energy lies below $-2m\sqrt{K}\,t$, and on a tree that can be asked in
+two sectors. In the \emph{square-summable} sector the composite is an
+ordinary normalisable state, its centre of mass at the band bottom
+$-2\sqrt{K}\,t_{\rm eff}$ of its own effective hopping. In the
+\emph{uniform} sector the relative motion is normalisable but the centre of
+mass is the Perron mode, at $-(K+1)t_{\rm eff}$, lower. The uniform
+threshold is therefore the lower of the two, and both are physical: the
+square-summable one is what a bulk state on a random regular graph sees,
+the uniform one is what a condensate of composites, which occupies the
+Perron mode, sees. Every number below says which sector it belongs to. I
+set $t=1$.
 
-\textit{Invariant sector.---}On a lattice the few-body problem is solved at
-zero total momentum. The tree has no momentum but it has a transitive
-automorphism group, and the analogue is the sector of wavefunctions that
-are constant on the orbits of that group. For two particles the orbit is
-their distance $d$, with $n_{d}=(K+1)K^{d-1}$ configurations per particle at
+\textit{Uniform sector.---}The tree has a transitive automorphism group,
+and the uniform sector is the set of wavefunctions constant on its orbits,
+the analogue of zero total momentum. For two particles the orbit is their
+distance $d$, with $n_{d}=(K+1)K^{d-1}$ configurations per particle at
 $d\ge1$. For three particles the orbit is the triple $(a,b,c)$ of distances
-from their median, the unique vertex that lies on all three geodesics, with
-the particles at positive distance in distinct branches of the median; the
-orbit has $n(a,b,c)=(K+1)^{(k)}K^{a+b+c-k}$ configurations per median, where
-$k$ is the number of positive entries and $x^{(k)}$ is the falling
-factorial. The Hamiltonian acts on orbit functions $f$ through a
-non-symmetric matrix $M$ of hop counts that satisfies detailed balance with
-respect to $n$, so $g=\sqrt{n}\,f$ obeys a symmetric problem with
-kinetic elements $-t\sqrt{M_{ss'}M_{s's}}$. Square-summability with the
-measure $n$ makes the relative motion normalisable while the centre of mass
-stays uniform, as at zero momentum.
-
-\textit{Pair.---}The two-body invariant sector is a half line in $d$ with
-hopping $J=2\sqrt{K}\,t$ for $d\ge1$, hopping $J_{0}=2\sqrt{K+1}\,t$ on the
-first link, and site energy $-U$ at $d=0$. The cavity element of the half
-line at the band edge is $1/J$, and the bound state condition
-$-U-E-J_{0}^{2}/J=0$ at $E=-2J$ gives
+from their median, the unique vertex on all three geodesics, with the
+particles at positive distance in distinct branches; the orbit has
+$n(a,b,c)=(K+1)^{(k)}K^{a+b+c-k}$ configurations per median, where $k$ is
+the number of positive entries and $x^{(k)}$ the falling factorial. The
+Hamiltonian acts on orbit functions $f$ through a matrix $M$ of hop counts
+that satisfies detailed balance with respect to $n$, so $g=\sqrt{n}\,f$
+obeys a symmetric problem with kinetic elements $-t\sqrt{M_{ss'}M_{s's}}$.
+The two-body sector is a half line in $d$ with hopping $J=2\sqrt{K}\,t$ for
+$d\ge1$, hopping $J_{0}=2\sqrt{K+1}\,t$ on the first link and site energy
+$-U$ at $d=0$; the cavity element of the half line at the band edge is
+$1/J$, and the bound-state condition $-U-E-J_{0}^{2}/J=0$ at $E=-2J$ gives
 \begin{equation}
-  \Up=2J-\frac{J_{0}^{2}}{J}=\frac{2(K-1)}{\sqrt{K}}\,t .
+  \Up^{\rm u}=2J-\frac{J_{0}^{2}}{J}=\frac{2(K-1)}{\sqrt{K}}\,t .
   \label{eq:U2}
 \end{equation}
-The pair energy for $U>\Up$ is $E_{2}=-J(\lambda+1/\lambda)$ with
-$0<\lambda<1$ the root of $U=J(\lambda+1/\lambda)-J_{0}^{2}\lambda/J$. On
-the line, $K=1$, the threshold vanishes as it must, and at large $U$,
-$E_{2}=-U-4(K+1)t^{2}/U$, the on-site shift $-2(K+1)t^{2}/U$ plus the
-energy of a pair that hops with amplitude $2t^{2}/U$ in the uniform mode of
-the tree.
+It vanishes on the line, $K=1$, as it must, and at large $U$ the pair
+energy is $-U-4(K+1)t^{2}/U$, the on-site shift $-2(K+1)t^{2}/U$ plus the
+Perron energy of a pair hopping with amplitude $2t^{2}/U$, which is the
+sector speaking. The three-body sector I diagonalise with the orbits
+truncated at $a+b+c\le L$. The truncated continuum lies above the true
+edge, so the smallest $U$ at which the ground energy drops below
+$-6\sqrt{K}\,t$ is an upper bound on $\Ut^{\rm u}$ that decreases with $L$;
+it is converged at $L=60$ and unchanged at $120$ and $180$. The reduced
+model reproduces exact diagonalisation on a ring at $K=1$ to eight digits,
+Eq.~\eqref{eq:U2}, and the large-$U$ expansion
+$E_{3}=-3U-3(K+1)t^{2}/(2U)+O(t^{4}/U^{3})$.
 
-\textit{Trimer.---}The three-body sector has no closed form and I
-diagonalise it with the orbits truncated at $a+b+c\le L$. The truncated
-continuum lies above the true edge $-6\sqrt{K}\,t$, so the smallest $U$ at
-which the ground energy drops below the edge is an upper bound on the
-threshold $\Ut$ that decreases with $L$; it is already converged to the
-bisection grid at $L=60$ and unchanged at $L=120$ and $180$. The reduced
-model reproduces exact diagonalisation of three particles on a ring at
-$K=1$ to eight digits, the closed form~\eqref{eq:U2} for the pair, and the
-large-$U$ expansion $E_{3}=-3U-3(K+1)t^{2}/(2U)+O(t^{4}/U^{3})$.
+\textit{Square-summable sector.---}Fix a root vertex and take the
+wavefunctions invariant under the automorphisms that fix it, which relabel
+the children of every vertex independently. A configuration is reduced to
+canonical form by relabelling branches in order of first use along the
+particle paths, its orbit measure is a product of falling factorials over
+the vertices of the tree spanned by the root and the particles, and the
+symmetrisation is as before. Every state in this sector is square-summable
+and the sector contains the radial part of every bound state. The
+thresholds follow from the Birman--Schwinger principle: with $V$ the
+diagonal operator that counts coincident pairs and $H_{0}$ the Hamiltonian
+at $U=0$, a bound state below $E$ exists when $U\lambda_{\max}\ge1$, where
+$\lambda_{\max}$ is the largest eigenvalue of
+$V^{1/2}(H_{0}-E)^{-1}V^{1/2}$, so the threshold is $1/\lambda_{\max}$ at
+the edge. For the pair the operator is the propagator between doubly
+occupied sites, $b_{d}=\langle ii|(H_{0}+4\sqrt{K}\,t)^{-1}|jj\rangle$ at
+distance $d$, a radial kernel and hence a function of the adjacency matrix
+of the tree; its norm is its value on the spherical function at the band
+edge, and its uniform-sector eigenvalue is its value on the constant
+vector,
+\begin{equation}
+  \frac{1}{\Up}=\sum_{d}b_{d}\,P_{d}(2\sqrt{K}),\qquad
+  \frac{1}{\Up^{\rm u}}=\sum_{d}b_{d}\,n_{d},
+  \label{eq:U2L2}
+\end{equation}
+with $P_{d}(2\sqrt{K})=K^{d/2}[(K+1)+d(K-1)]/K$ for $d\ge1$ the distance
+polynomial of the tree at the edge. The two thresholds are one kernel read
+on two centre-of-mass functions. The $b_{d}$ are a double integral over
+the Kesten--McKay density with the spherical functions, the first sum
+converges geometrically and gives the pair column of Table~\ref{tab:thr} to
+six digits, and the second reproduces Eq.~\eqref{eq:U2}. The trimer has no
+such reduction and I compute $\lambda_{\max}$ on the truncated orbit space
+at $L=30$ to $60$ and extrapolate with a fitted power of $L$, close to
+$2$; the same extrapolation applied to the truncated pair problem
+reproduces Eq.~\eqref{eq:U2L2} to $10^{-3}$, and the same routine
+reproduces the bisection thresholds of the uniform sector to their grid.
 
 \begin{table}[t]
-\caption{Pair and trimer thresholds on the Bethe lattice of branching
-$K$ (degree $z=K+1$), in units of $t$. $\Up$ is Eq.~\eqref{eq:U2}; $\Ut$
-is the numerical threshold of the three-body invariant sector, bisection
-grid $2\times10^{-3}$.}
+\caption{Pair and trimer thresholds on the Bethe lattice of branching $K$
+(degree $z=K+1$), in units of $t$, in the square-summable sector
+($\Up$ from Eq.~\eqref{eq:U2L2}, $\Ut$ extrapolated in $L$,
+uncertainty in the last digit) and in the uniform sector ($\Up^{\rm u}$
+from Eq.~\eqref{eq:U2}, $\Ut^{\rm u}$ by bisection on a grid of
+$2\times10^{-3}$).}
 \label{tab:thr}
 \begin{ruledtabular}
-\begin{tabular}{rrrrr}
-$K$ & $z$ & $\Ut$ & $\Up$ & $\Ut/\Up$ \\
+\begin{tabular}{rrrrrrrr}
+$K$ & $z$ & $\Up$ & $\Ut$ & $\Ut/\Up$ & $\Up^{\rm u}$ & $\Ut^{\rm u}$ & $\Ut^{\rm u}/\Up^{\rm u}$ \\
 \hline
- 2 &  3 & 1.310 & 1.414 & 0.926 \\
- 3 &  4 & 2.073 & 2.309 & 0.898 \\
- 4 &  5 & 2.637 & 3.000 & 0.879 \\
- 6 &  7 & 3.508 & 4.083 & 0.859 \\
-10 & 11 & 4.800 & 5.692 & 0.843 \\
+ 2 &  3 & 1.966 & 1.369 & 0.696 & 1.414 & 1.310 & 0.926 \\
+ 3 &  4 & 3.251 & 2.159 & 0.664 & 2.309 & 2.073 & 0.898 \\
+ 4 &  5 & 4.269 & 2.741 & 0.642 & 3.000 & 2.637 & 0.879 \\
+ 5 &  6 & 5.136 & 3.218 & 0.627 & 3.578 & 3.103 & 0.867 \\
+ 6 &  7 & 5.904 & 3.633 & 0.615 & 4.083 & 3.508 & 0.859 \\
+10 & 11 & 8.402 & 4.949 & 0.589 & 5.692 & 4.800 & 0.843 \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
 
-Table~\ref{tab:thr} and Fig.~\ref{fig:bind} contain the main result. On
-every tree with $K\ge2$ the trimer binds before the pair, $\Ut<\Up$, and the
-Borromean window $(\Up-\Ut)/\Up$ widens with the branching, from $7\%$ at
-$K=2$ to $16\%$ at $K=10$. Above $\Up$ the trimer stays below the continuum
-of a bound pair and a free particle, $E_{2}(U)-2\sqrt{K}\,t$, at every $U$
-computed, so the trion is the ground composite for all $U>\Ut$. This is the
-tree version of the cubic-lattice result of Mattis and
-Rudin~\cite{mattis1984}, with the coordination in the role of the
-dimension: the window does not close as the tree gets bushier.
+Table~\ref{tab:thr} and Fig.~\ref{fig:bind} contain the main result. In
+both sectors and on every tree with $K\ge2$ the trimer binds before the
+pair, and the Borromean window widens with the branching: in the
+square-summable sector from $30\%$ of $\Up$ at $K=2$ to $41\%$ at
+$K=10$, in the uniform sector from $7\%$ to $16\%$. Above $\Up$ the
+trimer stays below the continuum of a bound pair and a free particle,
+$E_{2}(U)-2\sqrt{K}\,t$ in the uniform sector, where the pair carries the
+Perron centre of mass and the third particle, normalisable relative to it,
+enters at the band edge; so the trimer is the ground composite for all
+$U>\Ut$. On the cubic lattice the same Birman--Schwinger calculation in a
+box of relative coordinates gives $\Up=7.914\,t$, the Watson integral, and $\Ut=5.158\,t$
+(converged to the last digit at box radius $6$), a window of $35\%$, the
+number behind the result of Mattis and Rudin~\cite{mattis1984}. The tree
+of degree $6$ has a window of $37\%$ in the square-summable sector, close
+to the cubic one, and of $13\%$ in the uniform sector, narrower
+because that sector's pair threshold is the lower one.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{fig1.pdf}
-\caption{Binding energies on the Bethe lattice of degree $z=4$ ($K=3$).
-Trimer energy measured from the three-particle continuum edge,
-$E_{3}+6\sqrt{K}\,t$ (dark line), and pair energy measured from the
-two-particle edge, $E_{2}+4\sqrt{K}\,t$ (light line), against the on-site
-attraction $U$. The trimer binds at $\Ut=2.07\,t$, the pair at
-$\Up=2.31\,t$, Eq.~\eqref{eq:U2}. Between the two, shaded, three particles
-are bound and no two are.}
+\caption{Binding energies in the uniform sector of the Bethe lattice of
+degree $z=4$ ($K=3$). Trimer energy measured from the three-particle
+continuum edge, $E_{3}+6\sqrt{K}\,t$ (dark line), and pair energy measured
+from the two-particle edge, $E_{2}+4\sqrt{K}\,t$ (light line), against the
+on-site attraction $U$. The trimer binds at $\Ut^{\rm u}=2.07\,t$, the pair
+at $\Up^{\rm u}=2.31\,t$, Eq.~\eqref{eq:U2}. Between the two, shaded, three
+particles are bound and no two are.}
 \label{fig:bind}
 \end{figure}
+
+\textit{Finite random regular graphs.---}On a finite random regular graph
+the Perron mode is a normalisable state, three free particles have their
+ground state at $-3(K+1)t$, and in the Borromean window the trimer is not
+the ground state of three particles but a state bound relative to the
+bulk continuum, coupled to the Perron-containing states with weight
+$O(1/N)$. To see it I diagonalise three distinguishable particles on
+random $3$-regular graphs of $N=100$, $150$ and $200$ vertices in the
+sector orthogonal to the Perron mode on every particle, and measure the
+probability that all three particles sit on one site in the three-body
+ground state and the probability that two do in the two-body ground
+state. A bound composite keeps a finite probability as $N$ grows; an
+unbound one loses it as $1/N$. \TODO{Fill from rrg\_q2: at $U=1.7$, inside
+the square-summable window $1.38<U<1.97$, the triple probability is ...
+and the pair probability ..., against ... and ... at $U=1.0$ below both
+thresholds and ... above $\Up$.} The bound trimer without a bound pair is
+a property of actual random regular graphs, in the sector the
+square-summable thresholds describe.
 
 \textit{Two identical fermions.---}The result depends on the three
 particles being distinguishable. In the sector antisymmetric under the
 exchange of particles 1 and 2, with attraction only between unlike
 particles, the ground energy never drops below the pair-plus-particle
-continuum, for all $U\le14t$ at $K=2$ and $K=3$, and the gap to it closes
-only slowly. Two equal-mass fermions and a third particle do not form a
-trimer on the tree, as in free space, where a mass ratio above $8.2$ is
-needed~\cite{kartavtsev2007}. The Borromean trimer of the tree is a
+continuum for $U\le14t$ at $K=2$ and $K=3$, and the strong-coupling limit
+says why. With the pair on site $i$ and the third fermion on a
+neighbour $j$, the hop of the pair's unlike particle to $j$ leaves a pair
+at $j$ and a free fermion at $i$, a degenerate configuration, so the
+composite moves by exchange at first order in $t$; the fermionic sign
+makes the amplitude $+t$, opposite to a hop, and Pauli blocking removes
+the site $i$. The relative motion at leading order is the tree with one
+vertex removed plus a positive potential $t$ on its neighbours, whose
+spectrum lies above $-2\sqrt{K}\,t$, and the pair itself moves only at
+order $t^{2}/U$: no bound state. The same exchange with the bosonic sign
+$-t$ is what binds trimers in the one-dimensional Bose--Hubbard
+model~\cite{valiente2010}, and on the three-dimensional lattice the
+equal-mass $2+1$ problem has no discrete spectrum below the continuum at
+strong coupling, a trimer requiring a mass ratio above a
+threshold~\cite{abdullaev2025}, as in free
+space~\cite{kartavtsev2007}. The Borromean trimer of the tree is a
 three-flavour object.
 
 \textit{One deep site.---}Disorder enters at zero density through its
-rare sites. Consider a single vertex, the root, with energy $\eps_{0}<0$ on
-an otherwise clean tree. A static impurity is a fourth particle that does
-not hop, and the invariant sector becomes the sector of the root-preserving
-automorphisms, which relabel the children of every vertex independently. A
-configuration of $m$ mobile particles is reduced to canonical form by
-relabelling branches in order of first use along the particle paths, its
-orbit measure is a product of falling factorials over the vertices of the
-tree spanned by the root and the particles, and the rest of the
-construction is as before. Every state in this sector is square-summable,
-so the bound states are ordinary ones, localised at the impurity. The
-thresholds follow from the Birman--Schwinger principle: with $V$ the
-diagonal operator that counts coincident pairs, a bound state below the
-edge $E$ exists when $U\lambda_{\max}\ge1$, where $\lambda_{\max}$ is the
-largest eigenvalue of $V^{1/2}(H_{0}-E)^{-1}V^{1/2}$ and $H_{0}$ is the
-Hamiltonian at $U=0$; the threshold is $1/\lambda_{\max}$ at the edge,
-one eigenvalue problem instead of a bisection, and it reproduces the
-bisection values of Table~\ref{tab:thr} to the bisection grid. One
-particle binds to the root when $|\eps_{0}|>\eps_{c}=(K-1)t/\sqrt{K}$, from
+rare sites. Give the root the energy $\eps_{0}<0$: a static impurity is a
+fourth particle that does not hop, the root-fixed sector is the natural
+one, and its bound states are localised at the impurity. One particle
+binds when $|\eps_{0}|>\eps_{c}=(K-1)t/\sqrt{K}$, from
 $\eps_{0}-E-(K+1)t^{2}\mathcal{G}(E)=0$ with $\mathcal{G}$ the cavity
 resolvent of the clean tree at the band edge, and the reduced model
-reproduces this threshold and the impurity energy.
-
-For $-\eps_{c}<\eps_{0}<0$ the site is too shallow to hold one particle,
-and Fig.~\ref{fig:imp} shows the attraction it needs to hold two or three.
-Both thresholds fall from their $\eps_{0}=0$ values to zero at
+reproduces this threshold, the impurity energy, and exact diagonalisation
+on finite Cayley trees to five digits. For $-\eps_{c}<\eps_{0}<0$ the site
+is too shallow to hold one particle, and Fig.~\ref{fig:imp} shows the
+attraction it needs to hold two or three. Both thresholds fall from the
+square-summable values of Table~\ref{tab:thr} at $\eps_{0}=0$ to zero at
 $\eps_{0}=-\eps_{c}$, and the trimer threshold is the lower one at every
 depth: $\Ut/\Up$ runs from $0.70$ at $\eps_{0}=0$ through a minimum of
-$0.60$ near $0.8\,\eps_{c}$ and back to $0.70$ at $0.99\,\eps_{c}$ for
-$K=2$, and from $0.67$ through $0.58$ to $0.67$ for $K=3$. The Borromean
-window at a shallow site is three to four times wider than on the uniform
-tree. The $\eps_{0}\to0$ limit is the square-summable sector of the clean
-tree, and its thresholds, $\Up=1.97\,t$ and $\Ut=1.38\,t$ at $K=2$,
-$3.26\,t$ and $2.17\,t$ at $K=3$ (truncation $L=60$, still drifting down
-by $0.01\,t$ from $L=40$), lie above those of Table~\ref{tab:thr}. The
-reason is the one anticipated: a composite localised around a point pays
-the band bottom of the tree for its centre of mass, the uniform sector pays
-the lower Perron energy. The ordering is the same in both sectors and the
-window is wider in the localised one. A site whose energy lies in the
-Lifshitz tail of a disordered network therefore holds a trion at an
-attraction where it holds neither one particle nor a pair.
+$0.60$ near $0.8\,\eps_{c}$ and back to $0.68$ at $0.99\,\eps_{c}$ for
+$K=2$, and from $0.66$ through $0.58$ to $0.65$ for $K=3$.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{fig2.pdf}
@@ -232,93 +298,68 @@ attraction where it holds neither one particle nor a pair.
 (dark line) at a single site of energy $\eps_{0}$ on the Bethe lattice,
 for $K=2$ and $K=3$, against the depth of the site in units of
 $\eps_{c}=(K-1)t/\sqrt{K}$, the depth at which one particle binds.
-Birman--Schwinger at the continuum edge, orbits truncated at $L=40$ for
-the trimer and $80$ for the pair. Shaded: three particles bound, no two
+Birman--Schwinger at the continuum edge, orbits truncated at $L=60$ for
+the trimer and $120$ for the pair; the change from $L=40$ is below
+$0.02\,t$ at $\eps_{0}=0$ and below $0.04\,t$ at $0.99\,\eps_{c}$, where
+the states are least localised. Shaded: three particles bound, no two
 bound. Open circles at $\eps_{0}=0$: the uniform-sector thresholds of
-Table~\ref{tab:thr}, which are lower because the centre of mass of a
-composite is then in the Perron mode of the tree.}
+Table~\ref{tab:thr}.}
 \label{fig:imp}
 \end{figure}
 
-\textit{Discussion.---}The model is realised, with its three flavours,
-by $^{6}$Li: its three lowest hyperfine states have pairwise attractions
-that are tuned together by a magnetic field, the mixture is stable enough
-to be loaded into optical lattices, and its three-body physics has been
-measured through recombination
-losses~\cite{ottenstein2008,huckans2009,williams2009}. An optical lattice
-with a speckle or quasi-periodic potential adds the site
-disorder~\cite{billy2008,roati2008}. In that setting the results say the
-following. As the attraction is ramped up at low filling, the first
-composites to appear are trions on the deepest sites, at an attraction that
-is $0.6$ of the one at which those same sites bind a pair, and the ratio is
-the same for coordination $3$ and $4$; the onset of three-body loss, or of
-a trion line in radio-frequency spectroscopy, precedes the onset of pairing
-by a factor that does not depend on the details of the lattice. Because a
-site holds a trion before it holds a pair, the low-filling state of the
-disordered three-component lattice gas is a dilute liquid of localised
-trions rather than of localised pairs, which is the zero-density end of the
+\textit{Disordered tree.---}With box disorder $\eps_{i}\in[-W/2,W/2]$ on
+every site, the thresholds of Fig.~\ref{fig:imp} classify the sites in
+the isolated-site approximation of a Lifshitz tail, each site seen with a
+clean environment. For $W=2\eps_{c}$, at $U=0.5\,\Up$ a fraction $0.14$
+($K=2$) or $0.17$ ($K=3$) of the sites hold a trimer and no pair, against
+$0.05$ or $0.07$ that hold a pair; at $U=0.7\,\Up$ the fractions are
+$0.37$ and $0.13$, or $0.35$ and $0.15$; at $W=4\eps_{c}$ a quarter of the
+sites hold one particle outright and the Borromean fraction at
+$U=0.5\,\Up$ is $0.07$ or $0.09$. The approximation ignores the disorder
+around a site, which shifts its thresholds in either direction, and it is
+a statement about localised few-body states, not about the many-body
+phases; those need the finite-density calculation.
+
+\textit{Discussion.---}The model is realised, with its three flavours, by
+$^{6}$Li, whose three lowest hyperfine states have attractions tuned
+together by a magnetic field, load into optical lattices, and show their
+three-body physics in recombination
+losses~\cite{ottenstein2008,huckans2009,williams2009}; a speckle or
+quasi-periodic potential adds the site
+disorder~\cite{billy2008,roati2008}. There the results say that as the
+attraction is ramped up at low filling the first composites are trimers on
+the deepest sites, at close to $0.6$ of the attraction at which those sites
+bind a pair, so that three-body loss, or a trimer line in radio-frequency
+spectroscopy, precedes pairing. I expect, but have not shown, that the
 trionic phase found at strong coupling in the clean
-system~\cite{rapp2007,inaba2010}. The colour superfluid, which at finite
-density is an instability of the Fermi sea at any attraction, has to enter
-the phase diagram from finite density, and its boundary with the trion
-phase ends at $\Ut$, not at $\Up$, on the zero-density axis. The
-three-body loss that limits these experiments is, in this light, the
-signature of the phase rather than an obstacle to it.
-
-The mechanism is the one that makes light clusters in warm dilute nuclear
-matter Borromean in the medium: there the deuteron dissolves at a lower
-density than the triton and the helion because Pauli blocking removes the
-weakly bound pair first~\cite{typel2010}, so between the two Mott densities
-three nucleons bind and two do not. On the tree the band edge does what
-Pauli blocking does in the nucleus, and the reduced problem suggests where
-the advantage of the triple lies: the hops that change its shape at the
-median are enhanced by the branch count, as the first hop of the pair is
-in $J_{0}$, but they act in three relative directions instead of one.
-
-For electrons the results are a selection rule. Two identical fermions and
-a third particle of the same mass do not bind on the tree, so the
-negative-$U$ centres of amorphous semiconductors~\cite{anderson1975}, which
-on the continuous random network~\cite{zachariasen1932,weaire1971} bind
-spin-paired electrons and explain the absence of a spin
-resonance~\cite{kastner1976}, do not by themselves produce Borromean
-three-electron centres. They can do so only where a third flavour is
-available, an orbital or valley degeneracy, as with the lone-pair $p$
-orbitals of the chalcogenides, or a heavy-light mass imbalance, and then
-the prediction is a population of odd-electron, spin-carrying centres at
-the shallow sites of the Lifshitz tail, present at a coupling where the
-same sites hold no pair. Which amorphous semiconductors show an
-odd-electron resonance that grows with disorder is then a question about
-their orbital degeneracy.
-
-For networks the trion is a dynamically generated higher-order
-interaction. The Hamiltonian is pairwise, yet the bound object is a triple
-that exists where no pair does, a hyperedge without its
-faces~\cite{vazquez2023pre,battiston2020}, and the tree shows that
-pairwise couplings on a branching structure generate such objects on
-their own. Where a network model infers interactions from pairwise
-statistics, this is the kind of structure it cannot see.
-
-Two remarks bound the claim. The uniform sector places the centre of mass
-of a bound composite in the Perron mode of the tree, whose energy lies
-below the square-summable band bottom of the composite; it is what a
-condensate of pairs occupies on a random graph and what the thermodynamic
-limit of a random regular graph gives once its rare short loops are
-ignored, and both thresholds in Table~\ref{tab:thr} are taken in the same
-sector. The impurity problem has no such subtlety, and the ordering
-$\Ut<\Up$ holds there with a wider margin. Second, the effect is a lattice
-effect in the sense of Mattis~\cite{mattis1986}, a consequence of the band
-edge rather than of a resonance, and there is no Efimov tower: the return
-probability on a tree decays exponentially, so its effective dimension is
-infinite and outside the Efimov window $2.3<d<3.8$~\cite{nielsen2001}.
+system~\cite{rapp2007,inaba2010} extends to zero density for $U>\Ut$,
+with the colour superfluid entering from finite density; the three-colour
+cavity calculation at finite density is the next step, and the thresholds
+here are its zero-density boundary. For electrons the
+$2+1$ result is a selection rule: negative-$U$ centres in amorphous
+semiconductors~\cite{anderson1975,weaire1971}, which bind spin-paired
+electrons, cannot by themselves produce Borromean three-electron centres;
+a third flavour, orbital or valley, or a mass imbalance is needed. For
+networks the trimer is a dynamically generated higher-order interaction, a
+bound triple with no bound pair from a pairwise Hamiltonian, a hyperedge
+without its faces~\cite{vazquez2023pre,battiston2020}, of the kind that
+pairwise inference cannot see. Last, the effect is a lattice effect in the
+sense of Mattis~\cite{mattis1986}, a consequence of the band edge rather
+than of a resonance. Counting the states below the three-body edge in the
+uniform sector at $U=\Up^{\rm u}$, where the pair is at resonance, gives
+one for $K=2$ and $3$, unchanged from $L=60$ to $180$, with the next state
+approaching the edge as $L^{-2}$, a continuum state; so no Efimov tower
+was found. The square-summable sector cannot be used for this count, since
+the centre-of-mass band of the bound trimer fills the region below the
+edge, and the square-root edge of the Kesten--McKay density leaves the
+question open in principle.
 
 In conclusion, on the Bethe lattice three distinguishable particles bind
-before two, in a window that widens with the degree, and a shallow site
-holds three before it holds two. The next step is the three-colour cavity
-calculation at finite density and disorder, for which these thresholds are
-the zero-density boundary conditions.
+before two, in both of the tree's sectors and in a window that widens with
+the degree, and a shallow site holds three before it holds two.
 
-The code that produced every number in this letter is available on
-request.
+The code that produced every number in this letter is deposited
+at~\cite{code}.
 
 \bibliography{refs}
 

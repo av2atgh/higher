@@ -19,8 +19,12 @@ def threshold_from(H0, V, edge, tol=1e-6):
         x, info = spl.cg(A, rhs, rtol=1e-9, maxiter=20000, M=Mpre)
         assert info == 0, info
         return sq * x[sup]
-    B = spl.LinearOperator((n, n), matvec=matvec, dtype=float)
-    lam = spl.eigsh(B, k=1, which="LA", tol=tol, maxiter=2000)[0][0]
+    if n <= 8:
+        Bm = np.column_stack([matvec(np.eye(n)[:, j]) for j in range(n)])
+        lam = np.linalg.eigvalsh(0.5 * (Bm + Bm.T))[-1]
+    else:
+        B = spl.LinearOperator((n, n), matvec=matvec, dtype=float)
+        lam = spl.eigsh(B, k=1, which="LA", tol=tol, maxiter=2000)[0][0]
     return 1.0 / lam
 
 def clean_trimer(K, L):

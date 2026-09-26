@@ -114,3 +114,59 @@ uniform-sector window. eps0 -> 0 gives the square-summable thresholds of the
 clean tree (L=60: K=2 1.974/1.379, K=3 3.257/2.165; still drifting down by
 ~0.01 from L=40), above the uniform-sector values 1.414/1.310 and
 2.309/2.073, as the Perron-vs-band-bottom argument predicts.
+
+## 2+1 sector at strong coupling (analytic), 2026-09-26
+
+Dimer D = (up, down) on site i, energy -U; extra up fermion on j != i.
+First order in t: the down of the dimer hops i -> j, which is a degenerate
+state (dimer at j, free up at i). Operator algebra:
+  -t c†_{j,down} c_{i,down} c†_{i,up} c†_{i,down} c†_{j,up} |0>
+    = +t c†_{j,up} c†_{j,down} c†_{i,up} |0>,
+i.e. the exchange amplitude is +t, opposite in sign to a hop. In the
+relative coordinate d = d(i,j) >= 1 (invariant sector) the exchange is a
+diagonal term +t at d = 1; the up cannot hop onto i (Pauli), so d = 0 is
+absent. The relative Hamiltonian at order t^0 (t/U) is the tree adjacency
+with the dimer site removed plus a positive potential +t on its neighbours,
+whose spectrum lies above -2 sqrt(K) t (subgraph of the tree plus a positive
+operator). The dimer itself hops only at order 2t^2/U. Hence no 2+1 bound
+state below the dimer + fermion continuum at strong coupling on the tree;
+the exchange, which binds bosonic trimers in 1D (Valiente, Petrosyan,
+Saenz 2010), is repulsive for the fermionic 2+1 case. Consistent with the
+finite-L scan (gap to the continuum positive, decreasing as the hard-wall
+energy of a free relative motion) and with Mattis-Rudin's fermion result and
+Abdullaev, Khalkhuzhaev, Kholmatov (arXiv:2502.01099): equal masses on the
+3D lattice, no discrete spectrum below the continuum at large coupling;
+trimers require a mass ratio above a threshold.
+
+## Revision after the PRL report (2026-09-26)
+
+Square-summable (L2) sector on the clean tree (tree4 with eps0 = 0):
+* pair, exact from the radial kernel (l2_pair.py): 1/U_2 = sum_d b_d P_d(2 sqrt K),
+  b_d = <ii|(H0 + 4 sqrt K)^{-1}|jj>; uniform sector = sum_d b_d n_d, reproduces
+  2(K-1)/sqrt K after 1/D Richardson. Values: K=2 1.965677, 3 3.251185, 4 4.268903,
+  5 5.136053, 6 5.903985, 10 8.402470.
+* trimer, Birman-Schwinger on L = 30..60 extrapolated with fitted power (1.7-1.9;
+  same fit on the pair reproduces the exact values to 1e-3) (l2_trimer.py, extrap.py):
+  K=2 1.369, 3 2.159, 4 2.741, 5 3.218, 6 3.633, 10 4.949; ratios 0.696, 0.664,
+  0.642, 0.627, 0.615, 0.589; windows 30-41 %.
+* uniform K=5: U3 = 3.103, U2 = 3.578, ratio 0.867.
+
+Cubic lattice, zero total momentum, box in relative coordinates (cubic.py):
+pair 8.06 at R=14 -> 7.92 by 1/R extrapolation (Watson 7.9136); trimer 5.186,
+5.168, 5.163, 5.160, 5.159 at R = 2..6 -> 5.158. Window 35 %, U3/U2 = 0.652.
+
+Efimov count (efimov_count.py): uniform sector at U = U2^u: one state below the
+edge for K = 2, 3 at L = 60, 120, 180; next state at +0.028, +0.0097, +0.0048
+(K=2), i.e. L^-2, continuum. L2 sector: 7-8 states below the edge at U = U2 are the
+box-quantised centre-of-mass band of the single bound trimer; not a count.
+
+Finite RRG, Q-sector (orthogonal to Perron on every particle), K=2 (rrg_q2.py,
+rrg_girth.py, rrg_pair_scaling.py): see logs; pair coincidence does not vanish
+between N = 100 and 200 even at girth >= 6; trimer coincidence ~0.2 at U = 1.7,
+300x its U = 0 value; pair scaling to N = 1600 in rrg_pair_scaling.log.
+
+Disorder average, isolated-site approximation (disorder_avg.py, L=60 curves):
+W = 2 eps_c: U = 0.5 U2 -> Borromean 0.14/0.17 (K=2/3), pair 0.05/0.07;
+U = 0.7 U2 -> 0.37/0.35 and 0.13/0.15. W = 4 eps_c: 0.25 hold one particle,
+Borromean 0.07/0.09 at U = 0.5 U2. Finite disordered Cayley ED (disorder_ed.py)
+abandoned: coincidence probabilities measure the IPR of the lowest orbital.

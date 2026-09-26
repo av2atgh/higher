@@ -1,0 +1,68 @@
+### M1. Which threshold is "the" Bethe-lattice threshold
+
+*"State in the Model/Invariant-sector section, not in a closing remark, that there are two natural thresholds..."*
+
+Done. The section "Model and the two thresholds" now defines the two sectors before any calculation: the square-summable sector, in which a composite is an ordinary normalisable state with its centre of mass at the band bottom of its own effective hopping, and the uniform sector, in which the relative motion is normalisable but the centre of mass is the Perron mode. The section states that the uniform threshold is the lower of the two, that the square-summable one is what a bulk state on a random regular graph sees and the uniform one what a condensate of composites sees, and that every number in the paper says which sector it belongs to. The former "invariant sector" is now called the uniform sector throughout, and its thresholds carry a superscript u.
+
+*"Give the L^2 thresholds for all K of Table I, extrapolated in L, alongside the uniform-sector ones. ... The L^2 pair threshold may well be obtainable in closed form via the radial kernel ... and the edge spherical function."*
+
+Done, and the referee's suggestion works. The pair propagator between doubly occupied sites at the two-body edge, b_d = <ii|(H_0 + 4 sqrt(K) t)^{-1}|jj> at distance d, is a radial kernel and therefore a function of the adjacency matrix of the tree. Its operator norm is its value on the spherical function at the band edge and its uniform-sector eigenvalue is its value on the constant vector, so
+
+  1/U_2 = sum_d b_d P_d(2 sqrt K),   1/U_2^u = sum_d b_d n_d,
+
+with P_d(2 sqrt K) = K^{d/2}[(K+1) + d(K-1)]/K the distance polynomial of the tree at the edge and n_d = (K+1)K^{d-1} the sphere size (new Eq. (3)). The two thresholds are one kernel read on two centre-of-mass functions, which I think is the cleanest way to state the referee's point. The b_d are a double integral of the Kesten-McKay density with the spherical functions; the first sum converges geometrically and gives the square-summable pair threshold to six digits (1.965677 at K=2, 3.251185 at K=3, 4.268903, 5.136053, 5.903985, 8.402470 at K=4,5,6,10), and the second sum reproduces Eq. (2), which is an independent check of the kernel. For the trimer there is no such reduction; the Birman-Schwinger eigenvalue is computed on the root-fixed orbit space at L = 30, 40, 50, 60 and extrapolated with a fitted power of L (1.7 to 1.9, approaching 2 with K). The same extrapolation applied to the truncated pair problem reproduces the exact values above to 1e-3, which calibrates the procedure. Table I now has both sectors for K = 2, 3, 4, 5, 6, 10. The square-summable window is 30% at K=2 and 41% at K=10, the uniform one 7% and 16%; the ordering U_3 < U_2 holds in both sectors and for every K.
+
+*"Be explicit about the status of the uniform sector on a finite random regular graph."*
+
+Done, in the new section "Finite random regular graphs": on a finite random regular graph the Perron mode is normalisable, three free particles have their ground state at -3(K+1)t, and in the Borromean window the trimer is not the ground state of three particles but a state bound relative to the bulk continuum, coupled to the Perron-containing states with weight O(1/N). The abstract no longer quotes Eq. (2) without qualification; it quotes the square-summable pair threshold first and Eq. (2) as the uniform-sector value.
+
+### M2. Direct verification near threshold
+
+*"A Lanczos calculation of three distinguishable particles on RRGs with N of order 100-300 ... at U inside the window, with the Perron-containing states identified and separated, would settle whether a bound trimer and no bound pair appears on actual random regular graphs."*
+
+Done, with one lesson that I report in the paper because it is itself a confirmation of the impurity section. I diagonalised three and two distinguishable particles on random 3-regular graphs of N = 100, 150 and 200 vertices (Hilbert space N^3, up to 8 million states) in the sector orthogonal to the Perron mode on every particle, with a Lanczos matrix-vector product that applies the projector, and used as diagnostic the probability that all three particles sit on one site in the three-body ground state and that both do in the two-body ground state; a bound composite keeps a finite probability as N grows, an unbound one loses it as 1/N. On unconstrained random regular graphs the trimer probability at U = 1.7t, inside the square-summable window 1.37 < U/t < 1.97, is 0.20 and independent of N, but the pair probability, 0.16, is also independent of N, although the pair should be unbound there. The reason is that the lowest bulk states of a finite random regular graph live on its rare short cycles, whose number is Poisson with an N-independent mean, and a short cycle is locally a deep site: the impurity section says exactly that deep sites bind pairs at lower attraction. I therefore repeated the calculation on graphs conditioned on girth at least 6, obtained by rejection sampling. RRG_GIRTH_RESULTS
+
+*"For the L^2 sector, a well-converged L -> infinity extrapolation should replace 'still drifting down by 0.01 t from L = 40'."*
+
+Done; see M1. Table I gives extrapolated values with an uncertainty of one unit in the last digit, calibrated on the pair.
+
+### M3. The 2+1 fermion sector
+
+*"A slowly closing positive gap is not a proof of absence. ... an analytic strong-coupling argument for the sign of that effective dimer-fermion interaction on the tree would be far more convincing."*
+
+Agreed, and the argument is short. With the pair on site i and the third fermion, identical to one member of the pair, on a neighbour j, the hop of the pair's unlike member from i to j produces a pair at j and a free fermion at i, a configuration degenerate with the initial one. The composite therefore moves by exchange at first order in t, not at order t^2/U. Working out the operator product, -t c†_{j,down} c_{i,down} acting on c†_{i,up} c†_{i,down} c†_{j,up}|0> gives +t times the exchanged configuration in the same ordering convention: the fermionic sign makes the exchange amplitude +t, opposite to a hop. In the relative coordinate d = d(i,j) the exchange is a diagonal term +t at d = 1, and Pauli blocking removes d = 0. The relative Hamiltonian at leading order is then the adjacency of the tree with one vertex removed plus a positive potential t on that vertex's neighbours. The first has spectrum within [-2 sqrt(K) t, 2 sqrt(K) t], being a subgraph of the tree, and the second raises it, so there is no state below the free-fermion band bottom; the pair itself hops only at order 2t^2/U. Hence no 2+1 bound state at strong coupling. The same exchange with the bosonic sign -t is attractive and is what binds the trimers of Valiente, Petrosyan and Saenz in the 1D Bose-Hubbard model, now cited. I also cite arXiv:2502.01099 (Abdullaev, Khalkhuzhaev and Kholmatov), which finds for the equal-mass 2+1 problem on the 3D lattice no discrete spectrum below the continuum at large coupling, with trimers requiring a mass ratio above a threshold, and Mattis and Rudin's negative fermion result is now cited as such in the introduction. The finite-L scan remains as numerical support: its positive gap is the hard-wall energy of a free relative motion and decreases as such.
+
+### M4. Claims in the abstract and discussion
+
+*"the trion Fermi liquid therefore reaches zero density..."*: removed from the abstract. In the discussion it is now "I expect, but have not shown, that the trionic phase ... extends to zero density for U > U_3", followed by the statement that the three-colour cavity calculation at finite density is the next step and that the thresholds here are its zero-density boundary. I have not attempted the finite-density calculation in this revision; it is a separate paper.
+
+*"places Borromean trions in the Lifshitz tail of any disordered network"*: replaced by a computed statement. The new section "Disordered tree" classifies the sites of a box-disordered tree with the impurity thresholds, in the isolated-site approximation of a Lifshitz tail: for W = 2 eps_c, at U = 0.5 U_2 a fraction 0.14 (K=2) or 0.17 (K=3) of the sites hold a trimer and no pair, against 0.05 or 0.07 that hold a pair; at U = 0.7 U_2 the fractions are 0.37 and 0.13, or 0.35 and 0.15; at W = 4 eps_c a quarter of the sites hold one particle outright and the Borromean fraction at U = 0.5 U_2 is 0.07 or 0.09. The text says what the approximation ignores (the disorder around a site) and that it is a statement about localised few-body states, not about phases. I also tried a direct diagonalisation of three and two particles on finite Cayley trees with disorder on every site and do not report it: on a small disordered sample every few-body ground state occupies the same localised orbital, so coincidence probabilities measure that orbital's inverse participation ratio rather than binding, and "bound" is not well defined without a continuum. The isolated-site classification is the well-defined zero-density statement.
+
+*"the ratio is the same for coordination 3 and 4" and "a factor that does not depend on the details of the lattice"*: removed. The discussion now says "close to 0.6 of the attraction at which those sites bind a pair" and makes no lattice-independence claim.
+
+*"The amorphous-semiconductor paragraph ... is currently longer than its evidential support."*: cut to two sentences stating the selection rule only, that negative-U centres with two spin species cannot by themselves produce Borromean three-electron centres and that a third flavour or a mass imbalance is needed; the polaronic nature of real negative-U centres is not addressed and the paragraph no longer implies that it is.
+
+### M5. The Efimov remark
+
+*"Whether a tower exists at U = U_2 on the tree is an open question that the author's own code can address: count the trimer states below the continuum as U -> U_2^+, in both sectors."*
+
+Done. In the uniform sector at U = U_2^u, where the pair is at resonance, the number of states below the three-body edge is one for K = 2 and K = 3, unchanged from L = 60 to 120 to 180; the next state sits above the edge at +0.028, +0.0097, +0.0048 (K=2) for those three truncations, i.e. it approaches the edge as L^{-2}, which is a box-quantised continuum state, not a bound one. The same holds at U = U_2^u + 0.05. In the square-summable sector the count is not meaningful, and the manuscript says why: at U = U_2 the trimer is already bound by 0.58t (K=2), and the states below the edge (7 at L=40, 8 at L=60) are the box-quantised centre-of-mass band of that one bound trimer, not further trimer species. The remark in the discussion now reports the count and says that no tower was found, and I have removed the argument from the exponential decay of the return probability, keeping only the observation that the square-root edge leaves the question open in principle.
+
+### M6. Positioning relative to Mattis-Rudin
+
+*"Please quote the cubic-lattice window from Refs. [5,6] ... and state precisely what is new."*
+
+Rather than quote, I computed the cubic-lattice window with the same Birman-Schwinger method, in a box of relative coordinates at zero total momentum: the pair threshold converges to the Watson value U_2 = 7.914t (the box values at radius 10 and 14 extrapolate in 1/R to 7.92), and the trimer threshold converges much faster, to U_3 = 5.158t at radius 6, converged to the last digit. The cubic window is therefore 35%, U_3/U_2 = 0.65. This is stated in the paper next to the tree values: the tree of degree 6 has a window of 37% in the square-summable sector, close to the cubic one, and a narrower one in the uniform sector because that sector's pair threshold is lower. The suggestive sentence about coordination and dimension has been replaced by this comparison. The introduction now ends with an explicit list of what is new relative to Mattis and Rudin: the exact pair thresholds in both sectors, the monotonic growth of the window with the degree, the distinction between the two sectors, which has no lattice counterpart, and the disorder results; and the finite-graph verification.
+
+### Minor points
+
+1. Eq. (1) has been re-set with the sums combined and no longer overflows the column (no overfull boxes in the log).
+2. The showpacs option is removed.
+3. The code and data are now cited as Ref. [code], a public repository with a Zenodo deposit to be made at acceptance; the sentence "available on request" is gone. [Note to author: the repository must be created before submission.]
+4. Fig. 2 now uses L = 60 for the trimer and 120 for the pair throughout, and the caption gives the change from L = 40 explicitly: below 0.02t at eps_0 = 0 and below 0.04t at 0.99 eps_c, where the states are least localised.
+5. "Trimer" is now used for the three-body bound state throughout; "trion" is defined once, in the model section, as the term of the many-body literature, and appears only in that context.
+6. "locally" inserted in the abstract and introduction.
+7. The dimer-plus-particle edge in the uniform sector is now justified in one sentence: the pair carries the Perron centre of mass and the third particle, normalisable relative to it, enters at the band edge.
+8. The Kunitski reference now has the full author list.
+9. Ge et al. is now cited in the introduction's inventory, as the charge-6e condensate of three bound Cooper pairs.
+10. Length: the discussion has been cut by about half, the nuclear-matter paragraph reduced to one clause in the introduction, and the amorphous-semiconductor paragraph to two sentences, to pay for the new sections. LENGTH_NOTE

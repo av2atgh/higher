@@ -6,7 +6,7 @@ rcParams.update({"font.size": 9, "axes.linewidth": 0.6})
 fig, axes = plt.subplots(1, 2, figsize=(3.4, 2.3))
 for ax, K in zip(axes, (2, 3)):
     ec = (K - 1) / np.sqrt(K)
-    r = np.array(json.load(open(f"../trimer/scan_bs_K{K}_L40.json")))  # eps0, frac, L, u2, u3
+    r = np.array(json.load(open(f"../trimer/scan_bs_K{K}_L60.json")))  # eps0, frac, L, u2, u3
     x, u2, u3 = r[:, 1], r[:, 3], r[:, 4]
     ax.fill_between(x, u3, u2, color="#e8e8e8", lw=0)
     ax.plot(x, u2, "-", color="#c9563c", lw=1.4)
