@@ -58,7 +58,7 @@ if __name__ == "__main__":
     if what == "uniform":
         out = {}
         for K in (2, 3):
-            Us = [1.38, 1.4, 1.45, 1.5, 1.6, 1.7, 2.0, 2.5, 3.0, 4.0] if K == 2 else [2.17, 2.2, 2.3, 2.4, 2.5, 2.7, 3.0, 3.5, 4.0, 5.0]
+            Us = [1.38, 1.4, 1.45, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.5, 3.0, 4.0] if K == 2 else [2.17, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.0, 3.5, 4.0, 5.0]
             for U in Us:
                 e3, r3, s3 = trimer_uniform_density(K, U); e2, g2, s2 = pair_uniform_density(K, U)
                 out[f"{K},{U}"] = dict(E3u=e3, rho3=r3.tolist(), s3=s3, E2u=e2, s2=s2, rho3_0=float(r3[0]), g2_0=float(g2[0]))
