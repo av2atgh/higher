@@ -98,9 +98,7 @@ asks the question that decides whether an emergent group interaction
 matters at large scale: does it survive the heterogeneity of a real
 graph, or does disorder pin it to a few sites? A sparse random graph is
 locally a tree, its local physics in the thermodynamic limit is that of
-the Bethe lattice of the same degree, where the cavity method is
-exact~\cite{abouchacra1973,vazquez2023pre}, and on that lattice the
-attractive Hubbard model has been solved by dynamical mean-field
+the Bethe lattice of the same degree, where the cavity method is exact~\cite{abouchacra1973,vazquez2023pre,chybook}, and on that lattice the attractive Hubbard model has been solved by dynamical mean-field
 theory~\cite{keller2001,garg2005,toschi2005}, with
 disorder~\cite{ioffe2010,feigelman2010} and with three
 flavours~\cite{inaba2009,inaba2011}, where the triple appears as the
@@ -664,11 +662,12 @@ percolation problem in which the complexes are their supports, the balls
 that hold $90\%$ of a trimer's one-body density, of radius $2$ for a deep
 site well inside its window and $8$ or more for a shallow site. A site
 within the radius of any Borromean centre is active, and the question is
-whether the active sites percolate; on the tree this correlated site
-percolation is exact by a cavity whose message carries the distance to
-the nearest centre inside a subtree and the connection probability
-conditioned on the distance outside, and it agrees with Monte Carlo on
-random regular graphs of $10^{5}$ vertices. With every centre of radius
+whether the active sites percolate; on the tree this correlated site percolation is exact by a cavity
+whose message carries the distance to the nearest centre inside a
+subtree and the connection probability conditioned on the distance
+outside, a dependent layer of the kind Ref.~\cite{chybook} uses for the
+localisation landscape, and it agrees with Monte Carlo on random regular
+graphs of $10^{5}$ vertices. With every centre of radius
 $r$ the threshold falls as $K^{-r}$, by counting: $p_{c}=0.073$, $0.014$
 and $0.003$ at $r=1$, $2$ and $3$ for $K=2$, and $0.024$, $0.0022$ and
 $0.0002$ for $K=3$. The Borromean fractions above lie one to three orders
@@ -729,9 +728,11 @@ singularity, from the localised side the localisation length diverges as
 $(W-W_{c})^{-1}$, and at fixed disorder below $W_{c}$ the same criterion
 applied energy by energy gives the mobility edge, below which the states
 of the Lifshitz tail, on rare regions of low site energy, are localised.
-I evaluate the criterion by population dynamics of the resolvent, with
-the integrated density of states from random regular graphs of $3000$
-vertices.
+I evaluate the criterion by population dynamics of the resolvent, in
+the implementation of the chygraph package~\cite{chygraph}, whose
+resolvent message and mobility-edge scans are described in
+Ref.~\cite{chybook}, with the integrated density of states from random
+regular graphs of $3000$ vertices built with the same package.
 
 A composite goes through the same transition with two numbers changed.
 A trimer with hopping $t_{3}$ and one-body density $\rho$ sees a
