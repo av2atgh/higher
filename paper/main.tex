@@ -160,17 +160,34 @@ from their median, the unique vertex on all three geodesics, with the
 particles at positive distance in distinct branches; the orbit has
 $n(a,b,c)=(K+1)^{(k)}K^{a+b+c-k}$ configurations per median, where $k$ is
 the number of positive entries and $x^{(k)}$ the falling factorial. The
-Hamiltonian acts on orbit functions $f$ through a matrix $M$ of hop counts
-that satisfies detailed balance with respect to $n$, so $g=\sqrt{n}\,f$
+Hamiltonian acts on orbit functions $f$ through a matrix $M$ of hop
+counts, Fig.~\ref{fig:calc}(b), that satisfies detailed balance with
+respect to $n$, so $g=\sqrt{n}\,f$
 obeys a symmetric problem with kinetic elements $-t\sqrt{M_{ss'}M_{s's}}$.
-The two-body sector is a half line in $d$ with hopping $J=2\sqrt{K}\,t$ for
-$d\ge1$, hopping $J_{0}=2\sqrt{K+1}\,t$ on the first link and site energy
-$-U$ at $d=0$; the cavity element of the half line at the band edge is
+The two-body sector is a half line in $d$, Fig.~\ref{fig:calc}(a), with
+hopping $J=2\sqrt{K}\,t$ for $d\ge1$, hopping $J_{0}=2\sqrt{K+1}\,t$ on the
+first link and site energy $-U$ at $d=0$; the cavity element of the half line at the band edge is
 $1/J$, and the bound-state condition $-U-E-J_{0}^{2}/J=0$ at $E=-2J$ gives
 \begin{equation}
   \Up^{\rm u}=2J-\frac{J_{0}^{2}}{J}=\frac{2(K-1)}{\sqrt{K}}\,t .
   \label{eq:U2}
 \end{equation}
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig0b.pdf}
+\caption{The uniform-sector calculation. (a) The pair problem reduced to
+the half line of the distance $d$: site energy $-U$ at $d=0$, hopping
+$J_{0}=2\sqrt{K+1}\,t$ on the first link and $J=2\sqrt{K}\,t$ beyond, with
+the orbit sizes $n_{d}$ and, above the first three sites, the
+configurations they stand for. (b) The moves in the three-body orbit
+$(a,b,c)$, for $K=2$: a particle steps away from the median with $K$
+choices or towards it with one; a particle at the median enters a fresh
+branch with $K-1$ choices; and a particle at the median stepping towards
+another relocates the median (dashed ring), changing two distances at
+once. The hop counts $M_{ss'}$ are these multiplicities, and the orbit
+sizes $n(a,b,c)$ balance them.}
+\label{fig:calc}
+\end{figure}
+
 It vanishes on the line, $K=1$, as it must, and at large $U$ the pair
 energy is $-U-4(K+1)t^{2}/U$, the on-site shift $-2(K+1)t^{2}/U$ plus the
 Perron energy of a pair hopping with amplitude $2t^{2}/U$, which is the
