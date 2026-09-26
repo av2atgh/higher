@@ -51,7 +51,9 @@ even multiple; 6e is the realized "triple".
   Physical Review E. 2026-09-26: new section "Finite density" (trimer Fermi
   liquid vs colour superfluid, trimer/phase.py, fig3); after a colleague's
   review the manuscript was reframed and then refocused as "Emergent
-  hyperedges from pairwise dynamics" (definition + operational test of an
+  hyperedges from pairwise dynamics" and then anchored on the localisation
+  transition of the composite, title "Emergent hyperedges localise before
+  their parts" (main_v3.tex = pre-anchor version) (definition + operational test of an
   emergent hyperedge; the Bethe-lattice trimer as the worked case; two
   thresholds on expanders with statistics selecting the sector). Earlier
   versions: paper/main_v1.tex (PRL), main_v2.tex (PRE, physics framing).

@@ -13,42 +13,42 @@
 
 \begin{document}
 
-\title{Emergent hyperedges localise before their parts}
+\title{Emergent hyperedges from pairwise dynamics}
 \author{Alexei Vazquez}
 \email{alexei@nodeslinks.com}
 \affiliation{Nodes \& Links Ltd, Salisbury House, Station Road, Cambridge, CB1 2LA, UK}
 \date{\today}
 
 \begin{abstract}
-Higher-order networks take group interactions as given. I ask what
-happens when a group interaction is instead made by pairwise dynamics on
-a graph, and follow it through the one transition that decides whether it
-matters at large scale: Anderson localisation. An emergent hyperedge is
-defined as a $k$-body bound state of a Hamiltonian whose terms live on
-the vertices and edges of the graph, Borromean when none of its
-$(k-1)$-body faces is bound, and detected on a finite graph by a $k$-fold
-coincidence that survives the thermodynamic limit while the $(k-1)$-fold
-ones vanish. The sparse random graphs of network science produce such an
-object from the simplest pairwise dynamics: three distinguishable
-particles with on-site attraction $U$ and hopping $t$ bind into a trimer
-before any pair binds, with thresholds obtained in closed form for the
-pair and numerically for the trimer on the Bethe lattice, in both of the
-sectors that an expander graph has and a lattice lacks, the one a
-condensate sees and the one a Fermi liquid sees. On a disordered graph
-the emergent hyperedges nucleate on rare deep sites, form a connected
-network as soon as they exist at a finite fraction of the sites, and
-then localise before their parts: the trimer, a composite with a narrow
-band and a threefold sensitivity to site energies, undergoes the
-Anderson transition at a disorder of about $2t$, against $17t$ for a
-single particle and $4t$ for a pair, and the Fermi liquid of trimers is
-a glass at every density above a line that rises from $0.6t$ to $1.7t$
-across the Borromean window. The transition is the same cavity
-transition as for a single particle, the point at which an infinitesimal
-escape rate stops decaying along the tree, with the composite's hopping
-and effective disorder in place of the bare ones. A group interaction
-made by pairwise dynamics is therefore more fragile to heterogeneity
-than the pairwise network that makes it, by an order of magnitude in
-the disorder.
+Higher-order networks take group interactions as given: a hyperedge is a
+datum. I ask whether a group interaction can emerge from pairwise ones,
+and give a mechanism, a definition and an operational test. On a graph
+whose edges carry only pairwise couplings, a $k$-body object is an
+emergent hyperedge when it is bound while none of its $(k-1)$-body faces
+is, the Borromean binding of few-body physics; on a finite graph it is
+detected by a $k$-fold coincidence probability that stays finite as the
+graph grows while the $(k-1)$-fold ones vanish. The sparse random graphs
+of network science produce such an object from the simplest pairwise
+dynamics: three distinguishable particles hopping on a random regular
+graph with on-site attraction $U$ bind into a trimer before any pair
+binds. On the Bethe lattice, the locally tree-like limit, the pair
+threshold is obtained in closed form and the trimer threshold numerically
+for branching $K=2$ to $10$, and the trimer binds first with a window
+that widens with the degree. Random graphs are expanders, which gives
+their composites two thresholds, one for a square-summable state and one
+for the uniform Perron mode below the spectral gap, a distinction
+lattices lack; quantum statistics selects which one a many-body phase
+sees, and the window that governs a dilute three-flavour gas is the
+cross-sector one, $3\%$ of the pair threshold at $K=2$ and $13\%$ at
+$K=10$. The test is passed on finite random regular graphs; two identical
+fermions and a third particle never form the object, a selection rule
+for emergence; and on a heterogeneous graph the hyperedges nucleate on
+rare deep sites, at $0.6$ of the attraction those sites need to bind a
+pair, form a connected network as soon as they exist at a finite
+fraction of the sites, and localise at a disorder an order of magnitude
+below the one that localises single particles. A group interaction on a network can therefore be a product of
+pairwise dynamics on the underlying graph, carried by a statistic of the
+group that no statistic of its parts contains.
 \end{abstract}
 
 \maketitle
@@ -83,38 +83,29 @@ of an emergent group interaction can take: not an effective coupling
 that appears in a coarse-grained description, but a persistent composite
 entity, a bound state, made by pairwise couplings alone.
 
-This paper puts the mechanism on the graphs network science uses and
-asks the question that decides whether an emergent group interaction
-matters at large scale: does it survive the heterogeneity of a real
-graph, or does disorder pin it to a few sites? A sparse random graph is
-locally a tree, its local physics in the thermodynamic limit is that of
-the Bethe lattice of the same degree, where the cavity method is
-exact~\cite{abouchacra1973,vazquez2023pre}, and on that lattice the
-attractive Hubbard model has been solved by dynamical mean-field
-theory~\cite{keller2001,garg2005,toschi2005}, with
+This paper puts the mechanism on the graphs network science uses. A
+sparse random graph is locally a tree, its local physics in the
+thermodynamic limit is that of the Bethe lattice of the same degree,
+where the cavity method is exact~\cite{abouchacra1973,vazquez2023pre},
+and on that lattice the attractive Hubbard model has been solved by
+dynamical mean-field theory~\cite{keller2001,garg2005,toschi2005}, with
 disorder~\cite{ioffe2010,feigelman2010} and with three
 flavours~\cite{inaba2009,inaba2010}, where the triple appears as the
 trion that competes with the colour superfluid of
-pairs~\cite{rapp2007,inaba2009,inaba2010}. The Bethe lattice is also
-where Anderson localisation has its exact solution, the cavity
-recursion for the resolvent of Abou-Chacra, Anderson and
-Thouless~\cite{abouchacra1973}, and that recursion applies to a
-composite as it does to a particle, once the composite's hopping and its
-sensitivity to the site energies are known. The paper builds those two
-numbers from the few-body wavefunctions and puts the emergent hyperedge
-through the transition. Section~\ref{sec:def} defines an emergent
-hyperedge and its operational test. Sections~\ref{sec:model}
-to~\ref{sec:l2} compute the pair and trimer thresholds on the Bethe
-lattice, the pair ones in closed form, in the two sectors that an
-expander has and a lattice lacks. Section~\ref{sec:rrg} runs the test on
-finite random regular graphs, Sec.~\ref{sec:density} shows that quantum
-statistics selects which sector a many-body phase sees,
-Sec.~\ref{sec:fermions} that statistics can also forbid the object, and
-Secs.~\ref{sec:site} and~\ref{sec:disorder} where it nucleates on a
-heterogeneous graph. Section~\ref{sec:perc} shows that the emergent
-hyperedges form a connected network as soon as they exist, and
-Sec.~\ref{sec:loc}, the anchor of the paper, that they localise before
-their parts.
+pairs~\cite{rapp2007,inaba2009,inaba2010}. Yet whether the triple or the
+pair forms first as the attraction grows at zero density is not known on
+a tree, and a tree raises a question a lattice does not: it is an
+expander, its uniform mode lies below the band by the spectral gap and
+is not square-summable, so a composite has two thresholds, not one.
+Section~\ref{sec:def} defines an emergent hyperedge and its operational
+test. Sections~\ref{sec:model} to~\ref{sec:l2} compute the pair and
+trimer thresholds on the Bethe lattice in both sectors, the pair ones in
+closed form. Section~\ref{sec:rrg} runs the test on finite random
+regular graphs. Section~\ref{sec:density} shows that quantum statistics
+selects which threshold a many-body phase sees, Sec.~\ref{sec:fermions}
+that statistics can also forbid the object, Secs.~\ref{sec:site}
+and~\ref{sec:disorder} where it nucleates on a heterogeneous graph, and
+Sec.~\ref{sec:perc} whether the emergent hyperedges connect and move.
 
 It helps to say at the outset what here is a new instance of known
 physics, what is new as a result of calculation, and what is new. Known,
@@ -133,22 +124,18 @@ Eqs.~\eqref{eq:U2} and~\eqref{eq:U2L2}, their exact large-$K$ limits from
 the semicircle density, the monotonic growth of the Borromean window with
 the degree, the thresholds at a single deep site and on a disordered
 tree, the direct verification on random regular graphs conditioned on
-girth, and an exact cavity for the percolation of the emergent
-hyperedges. New are three things. For network science, the definition of
-an emergent hyperedge with a test in terms of a three-point statistic,
-and the demonstration that the sparse random graphs of the field produce
-one from the simplest pairwise dynamics. For physics, that on an expander
-a composite has two thresholds, separated by the spectral gap that the
-Alon--Boppana bound makes unavoidable~\cite{alon1986,nilli1991}, and that
-quantum statistics selects which one a many-body phase sees, a bosonic
-composite condensing into the Perron mode and binding at the uniform
-threshold, a fermionic one filling a band and binding at the
-square-summable one. And, for both, the localisation transition of the
-emergent hyperedge: a composite made by pairwise couplings localises at a
-disorder an order of magnitude below the one that localises its
-constituents, so that the liquid of emergent hyperedges is a glass over a
-range of heterogeneity in which the pairwise network that produced them
-still conducts.
+girth, an exact cavity for the percolation of the emergent hyperedges,
+and the localisation of the trimer liquid. New are two things. For network science, the definition of an
+emergent hyperedge with a test in terms of a three-point statistic, and
+the demonstration that the sparse random graphs of the field produce one
+from the simplest pairwise dynamics. For physics, that on an expander a composite has two
+thresholds, separated by the spectral gap that the Alon--Boppana bound
+makes unavoidable~\cite{alon1986,nilli1991}, and that quantum statistics
+selects which one a many-body phase sees: a bosonic composite condenses
+into the Perron mode and binds at the uniform threshold, a fermionic
+composite fills a band and binds at the square-summable one, so that the
+window governing the dilute phase diagram is the cross-sector one, and
+the ordering holds in all three comparisons.
 
 \section{What an emergent hyperedge is}
 \label{sec:def}
@@ -600,11 +587,12 @@ lesson is where to look: emergent hyperedges nucleate on the rare deep
 sites of a heterogeneous graph, and on a finite random graph, on its
 short cycles, before they exist in the bulk.
 
-\section{The emergent hyperedges connect}
+\section{The emergent hyperedges connect and localise}
 \label{sec:perc}
 Two questions a network scientist asks of the emergent hyperedges of a
-disordered graph are whether they connect and whether they move. The
-first is a percolation problem of a new kind. A fraction $f_{B}$ of
+disordered graph are whether they connect and whether they move.
+
+The first is a percolation problem of a new kind. A fraction $f_{B}$ of
 the sites is Borromean, Sec.~\ref{sec:disorder}, and each hosts a trimer
 whose one-body density decays away from it; take as its support the ball
 that holds $90\%$ of that density, of radius $r_{90}$ computed from the
@@ -636,61 +624,17 @@ treats a trimer of radius $8$ as bound to one site in a clean
 environment; the compact-only variant is the safe statement, and it
 gives the same answer.
 
-\section{The emergent hyperedges localise before their parts}
-\label{sec:loc}
-The second question is whether the emergent hyperedges move, and its
-answer is a phase transition: the Anderson localisation of a composite.
-The transition itself is the single-particle one, so I state it first
-in the form the cavity gives it. Put a particle on a site and ask
-whether it leaks away. The resolvent recursion of the tree gives the
-site a level, shifted by the real part of its self-energy, and a width,
-the imaginary part, which is the rate at which the particle leaves into
-the branches and does not return. In the extended phase that width stays
-finite as the regulator $\eta$ goes to zero: the state is system-wide,
-and on a finite random regular graph its inverse participation ratio
-scales as $1/N$. In the localised phase the width vanishes with $\eta$:
-the local spectrum is a set of poles, the particle stays within a
-localisation length, and the inverse participation ratio stays finite.
-Which phase holds is decided by the fate of an infinitesimal escape rate
-injected at infinity. In the localised phase the imaginary parts are
-infinitesimal and their recursion is linear: the imaginary part
-transmitted along an edge is $t^{2}|G|^{2}$ times the sum of those
-arriving from the $K$ branches beyond, so the injected rate is
-multiplied along every path of length $n$ by a product of $n$ factors
-$t^{2}|G|^{2}$ and summed over the $K^{n}$ paths. That sum is a
-directed-polymer partition function on the tree with random weights,
-broadly distributed because a site with $\eps_{i}-E-\operatorname{Re}\Sigma_{i}$
-near zero is a resonance with a large $|G|$; the localised phase is its
-frozen phase, in which the sum is carried by rare resonant paths and
-still decays, and the transition is where the entropy of paths, $\ln K$
-per step, first compensates the decay of the weights. Because of the
-heavy tails the right measure of that decay is a fractional moment: the
-localised phase is stable while the growth rate of the $\beta$-th moment
-of the transmitted imaginary parts is below one for some $\beta$ in
-$(0,1)$, the minimum sits at $\beta=1/2$ by a symmetry of the weight
-distribution, and there the criterion reads $Kt\langle|G|\rangle=1$: the
-transition is the disorder at which the mean modulus of the cavity Green
-function per branch falls to $1/(Kt)$~\cite{abouchacra1973}. Approached
-from the extended side the typical width vanishes with an essential
-singularity, from the localised side the localisation length diverges as
-$(W-W_{c})^{-1}$, and at fixed disorder below $W_{c}$ the same criterion
-applied energy by energy gives the mobility edge, below which the states
-of the Lifshitz tail, on rare regions of low site energy, are localised.
-I evaluate the criterion by population dynamics of the resolvent, with
-the integrated density of states from random regular graphs of $3000$
-vertices.
-
-A composite goes through the same transition with two numbers changed.
-A trimer with hopping $t_{3}$ and one-body density $\rho$ sees a site-energy shift
+The second question is Anderson localisation of a composite. A trimer
+with hopping $t_{3}$ and one-body density $\rho$ sees a site-energy shift
 $\sum_{k}\rho_{k}\eps_{k}$ of variance $s_{3}^{2}W^{2}/12$, with
 $s_{3}^{2}=\sum_{d}\rho(d)^{2}/n_{d}$ between $1.4$ near threshold and
 $3$ for a trimer on one site, so its Anderson problem is the
 single-particle one on the same tree with hopping $t_{3}$ and disorder
-$s_{3}W$, exactly by scaling. Both numbers work against the composite:
-its band is narrow, $2\sqrt{K}\,t_{3}$ against $2\sqrt{K}\,t$, and its
-sensitivity to the site energies is up to threefold, so a bare disorder
-that is a small fraction of the single-particle bandwidth is several
-composite bandwidths. The disorder above which every trimer state
+$s_{3}W$, exactly by scaling; and the single-particle problem is solved
+by the cavity for the resolvent~\cite{abouchacra1973}, which I use
+through its population dynamics for the mobility edge and the critical
+disorder, with the integrated density of states from random regular
+graphs of $3000$ vertices. The disorder above which every trimer state
 is localised is $W_{c}^{(3)}=W_{c}\,t_{3}/s_{3}$: at $K=2$ it is $2.1\,t$
 near the trimer threshold, falling to $1.6\,t$ at $U=2t$, against
 $17.4\,t$ for a single particle and $4\,t$ for a pair once it is well
@@ -704,41 +648,11 @@ when $n<n_{\rm tail}$; since the liquid exists only below $n_{1}(U)$,
 Sec.~\ref{sec:density}, it is a glass at every density for $W$ above the
 line $W_{\rm glass}(U)$ at which $n_{\rm tail}=n_{1}$, which at $K=2$
 rises from $0.6\,t$ at $U=1.38\,t$ to $1.4\,t$ at $U=1.5\,t$ and
-$1.7\,t$ at $U=1.7\,t$, and at $K=3$ from $1.1\,t$ to $2.1\,t$, Fig.~\ref{fig:glass}. The
-phase diagram of the emergent hyperedges in the $(U,W)$ plane therefore
-has three regions: a liquid, in which the trimers above the tail are
-system-wide and the liquid conducts; a trimer glass, in which every
-occupied state of the liquid is localised while the trimer band still has
-extended states above the Fermi level; and, above $W_{c}^{(3)}$, no
-system-wide trimer state at all. All three lie at disorders where the
-single particle, with $W_{c}=17.4\,t$ or $32\,t$, is deep in its extended
-phase. Disorder therefore favours the trimer side of the phase diagram
-twice: it nucleates the emergent hyperedges on its deep sites, and it
-localises the liquid they form at a disorder an order of magnitude below
-the one that localises single particles, with the pair in between. Two
-caveats. The population dynamics gives $W_{c}=17.4\,t$ at $K=2$, where
-large-scale studies of random regular graphs give $18.2\,t$; the
-composite critical disorders scale with it and carry the same $4\%$. And
-the effective disorder matches the variance of the composite's
-site-energy shift, which is exact to first order in $W$ and treats the
-composite as rigid; a trimer that deforms in the disorder is more
-sensitive, not less, so the composite critical disorders are upper
-bounds in that respect.
-
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{fig5.pdf}
-\caption{Phase diagram of the Fermi liquid of trimers in the plane of
-attraction $U$ and box disorder $W$, for $K=2$ and $3$, over the range
-of $U$ in which the liquid exists below a finite density
-$n_{1}(U)$. Liquid: the occupied trimer states above the Lifshitz tail
-are system-wide. Trimer glass: every occupied state of the liquid is
-localised, $n_{1}(U)<n_{\rm tail}$, above the line $W_{\rm glass}(U)$
-(circles). Above $W_{c}^{(3)}(U)$ (black line) no trimer state is
-extended. Dotted lines: the square-summable trimer threshold and the
-uniform pair threshold. The single particle localises at $W=17.4\,t$
-($K=2$) and $32\,t$ ($K=3$), off the scale.}
-\label{fig:glass}
-\end{figure}
+$1.7\,t$ at $U=1.7\,t$, and at $K=3$ from $1.1\,t$ to $2.1\,t$. Disorder
+therefore favours the trimer side of the phase diagram twice: it
+nucleates the emergent hyperedges on its deep sites, and it localises
+the liquid they form at a disorder an order of magnitude below the one
+that localises single particles, with the pair in between.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{fig4.pdf}
@@ -757,17 +671,11 @@ above its uniform threshold (dashed), single particle (dotted).}
 \section{Conclusions}
 \label{sec:conclusions}
 A pairwise Hamiltonian on a sparse random graph produces a bound triple
-with no bound pair, an emergent hyperedge without faces, carried by a
-three-point statistic that no two-point statistic contains; on a
-disordered graph these hyperedges connect as soon as they exist and
-localise before their parts, at a disorder an order of magnitude below
-the one that localises single particles. The binding mechanism
+with no bound pair: an emergent hyperedge without faces, carried by a
+three-point statistic that no two-point statistic contains. The mechanism
 is the band-edge Borromean binding of Mattis and Rudin~\cite{mattis1984}
-placed on the graphs of network science, the localisation transition is
-the cavity transition of Abou-Chacra, Anderson and
-Thouless~\cite{abouchacra1973} with the composite's hopping and
-effective disorder in place of the bare ones, and what random graphs add
-to the binding is that they are expanders: a composite on them has two thresholds, and
+placed on the graphs of network science, and what those graphs add is
+that they are expanders: a composite on them has two thresholds, and
 quantum statistics chooses between them, pairs condensing into the Perron
 mode and binding at the uniform threshold, trimers filling a band and
 binding at the square-summable one. The ordering holds in both sectors
@@ -778,19 +686,12 @@ their large-$K$ limits, the growth of the window with the degree, the
 deep-site and disorder thresholds and the finite-graph verification are
 the calculational content.
 
-For network science the consequences are three. First, a group
+For network science the consequences are two. First, a group
 interaction on a network need not be part of the system's rules: it can
 be made by pairwise dynamics on the underlying graph, and
 Sec.~\ref{sec:def} says what such an object is, a $k$-fold coincidence
 that survives the thermodynamic limit when the $(k-1)$-fold ones do
 not, the ground-state counterpart of an interaction information. Second,
-an emergent group interaction is more fragile to heterogeneity than the
-pairwise network that makes it: the composite's band is narrower and its
-sensitivity to site energies larger than its constituents', so the
-liquid of emergent hyperedges is a glass at a disorder where single
-particles still move freely, and a higher-order structure produced by
-dynamics should be expected to be pinned, not transported, on any graph
-with moderate heterogeneity. Third,
 heterogeneity favours emergence: a site too shallow to hold one particle holds three at $0.6$
 of the attraction at which it holds two, and on a finite random graph
 the short cycles play that role, so the first emergent hyperedges of a
