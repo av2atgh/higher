@@ -4,3 +4,4 @@ K=3 L=27 U=4.0: 10 states below the edge -10.630; band [-13.8587, -12.3993] widt
 K=3 L=27 U=5.0: 10 states below the edge -11.126; band [-16.4272, -15.3123] width 1.1150 -> t3 = 0.1609   (next state -11.0812)
 K=3 L=36: 382753 states (53s)
 K=3 L=36 U=3.5: 13 states below the edge -10.453; band [-12.6881, -10.9653] width 1.7228 -> t3 = 0.2487   (next state -10.4187)
+K=3 L=36 U=4.0: 13 states below the edge -10.630; band [-13.8632, -12.3993] width 1.4639 -> t3 = 0.2113   (next state -10.5955)

@@ -22,7 +22,7 @@ for ax, K in zip(axes, (2, 3)):
     for sp in ("top", "right"): ax.spines[sp].set_visible(False)
     um = 0.5 * (U.min() + U.max()); ul = U.min() + 0.25 * (U.max() - U.min()); ur = U.max() - 0.06 * (U.max() - U.min())
     ax.set_ylim(0, 3.0)
-    ax.text(um, 0.5, "liquid", fontsize=10, color=B, ha="center", va="center")
+    ax.text(um, 0.5, "trimer liquid", fontsize=10, color=B, ha="center", va="center")
     ax.annotate("trimer glass", xy=(ul, 0.5 * (np.interp(ul, U, Wg) + np.interp(ul, U, Wc))), xytext=(ul, np.interp(ul, U, Wg) - 0.45), fontsize=9.5, color=R, ha="center", va="top", arrowprops=dict(arrowstyle="-|>", color=R, lw=0.9, shrinkB=1))
     ax.text(U.max() - 0.02 * (U.max() - U.min()), Wc[-1] + 0.1, "localised trimers", fontsize=10, color="#333333", ha="right", va="bottom")
 axes[0].set_ylabel("disorder $W/t$")
