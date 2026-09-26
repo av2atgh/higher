@@ -24,7 +24,7 @@ for ax, K in zip(axes, (2, 3)):
     ax.set_ylim(0, 3.0)
     ax.text(um, 0.5, "liquid", fontsize=10, color=B, ha="center", va="center")
     ax.annotate("trimer glass", xy=(ul, 0.5 * (np.interp(ul, U, Wg) + np.interp(ul, U, Wc))), xytext=(ul, np.interp(ul, U, Wg) - 0.45), fontsize=9.5, color=R, ha="center", va="top", arrowprops=dict(arrowstyle="-|>", color=R, lw=0.9, shrinkB=1))
-    ax.text(U.max(), Wc[-1] + 0.22, "all trimer states localised", fontsize=9, color="#333333", ha="right", va="bottom")
+    ax.text(U.max(), Wc[-1] + 0.22, "localised trimers", fontsize=10, color="#333333", ha="right", va="bottom")
     ax.text(um, 2.7, f"single particles at the same density:\n$W$ = {W1.min():.0f}$t$ to {W1.max():.0f}$t$, off scale", fontsize=8.5, color="#666666", ha="center", va="center")
     ax.annotate("", xy=(ur, 2.98), xytext=(ur, 2.45), arrowprops=dict(arrowstyle="-|>", color="#666666", lw=0.9))
 axes[0].set_ylabel("disorder $W/t$")
